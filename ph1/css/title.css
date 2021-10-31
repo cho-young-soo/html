@@ -1,0 +1,166 @@
+#title{
+  position:relative;
+}
+#title ul{
+  position: relative;
+  height: 650px;
+}
+#title ul li{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 650px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#title ul li:nth-of-type(1){
+  background-image: url(../img/title/title1.jpg);
+}
+#title ul li:nth-of-type(2){
+  background-image: url(../img/title/title2.jpg);
+}
+#title ul li:nth-of-type(3){
+  background-image: url(../img/title/title3.jpg);
+}
+#title ul li:nth-of-type(4){
+  background-image: url(../img/title/title4.jpg);
+}
+#title ul li:nth-of-type(5){
+  background-image: url(../img/title/title5.jpg);
+}
+#title ul li .titlePosition{
+  position: absolute;
+  top:205px;
+  left:400px;
+  color:#fff;
+}
+
+#title ul li:nth-child(2) .titlePosition
+{
+  color:#000;
+}
+#title ul li:nth-child(3) .titlePosition
+{
+  text-align: center;
+  background-color:#fff;
+  left:calc(50% - 291px);
+  padding:60px;
+}
+#title ul li:nth-child(4) .titlePosition
+{
+  text-align: center;
+  left:calc(50% - 206px);
+}
+#title ul li:nth-child(5) .titlePosition
+{
+  left:unset;
+  right:400px;
+}
+#title ul li .titlePosition h2{
+  margin-bottom:16px;
+}
+#title ul li:nth-child(3) .titlePosition h2
+{
+  font-size:32px;
+  color:#333;
+}
+#title ul li .titlePosition p{
+  font-size:32px;
+  line-height:1.6;
+}
+#title ul li:nth-child(3) .titlePosition p
+{
+  color:#a0a0a0;
+  font-size:16px;
+}
+#title ul li:nth-child(4) .titlePosition p
+{
+  font-weight:bold;
+}
+#title ul li .titlePosition a{
+  margin-top:16px;
+}
+#title ul li:nth-child(3) .titlePosition a
+{
+  color:#333;
+  border:1px solid #999;
+}
+
+#title ul li .titlePosition a{
+  width: 195px;
+  height: 54px;
+  display: inline-block;
+  text-align: center;
+  line-height: 54px;
+  color: #fff;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+}
+#title ul li:nth-child(2) .titlePosition a
+{
+  color:#000;
+  border:1px solid #000;
+}
+#title ul li .titlePosition a:hover{
+  background-color:#000;
+  border:1px solid #000;
+  color:#fff;
+}
+
+/* 타이틀 좌우이동 버튼  */
+#title .button-container{
+  width:100%;
+  height:60px;
+  position:absolute;
+  top:calc(50% - 30px);
+  left:0;
+  display:flex;
+  justify-content:space-between;
+  padding: 0 130px;
+  box-sizing:border-box;
+  z-index: 1;
+}
+#title .button-container div{
+  width:60px;
+  height:60px;
+  border-top:5px solid rgba(255, 0, 0, 0.5);
+  border-left:5px solid rgba(255, 0, 0, 0.5);
+  border-radius:5px;
+  cursor:pointer;
+}
+#title .button-container div:hover{
+  border-top:5px solid rgba(255, 0, 0, 1);
+  border-left:5px solid rgba(255, 0, 0, 1);
+}
+#title .button-container .next{
+  transform: rotate(135deg);
+}
+#title .button-container .prev{
+  transform: rotate(-45deg)
+}
+
+
+/* titleList  */
+#title .titleList{
+  position:absolute;
+  height:20px;
+  width:100%;
+  left:0;
+  bottom:60px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+#title .titleList div{
+  width:20px;
+  height:20px;
+  background-color:#fff;;
+  cursor: pointer;
+  border-radius: 100%;
+}
+
+#title .titleList div.currentT{
+  background-color:red;
+}

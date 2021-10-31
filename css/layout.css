@@ -1,0 +1,568 @@
+@charset "utf-8";
+/* ~~~~~~~~~~~~~~~~~~~~~ 공통컨텐츠 ~~~~~~~~~~~~~~~~~~~~~ */
+.current_gnb{
+  color:#333 !important;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~ sns ~~~~~~~~~~~~~~~~~~~~~ */
+.sns ul li{
+  display:inline-block;
+}
+.sns ul li a{
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 20px;
+  text-indent: -9999px;
+  background-size:contain;
+  background-position: center;
+}
+.sns ul li:nth-child(1) a{
+  background-image:url("../img/emailsns.png")
+}
+.sns ul li:nth-child(2) a{
+  background-image:url("../img/kakaosns.png")
+}
+.sns ul li:nth-child(3) a{
+  background-image:url("../img/githubsns.png")
+}
+
+main{
+  margin-left: 300px;
+  position: relative;
+  height:100%;
+}
+
+section{
+display: table;
+table-layout: fixed;
+width: 100%;
+background-color: #fff;
+}
+section:nth-child(2n){
+  background-color: rgb(240,240,240);
+}
+section:last-child{
+  margin-bottom: 0;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~ 개별 컨텐츠 ~~~~~~~~~~~~~~~~~~~~~*/
+/* ~~~~~~~~~~~~~~~~~~~~~ sidebar ~~~~~~~~~~~~~~~~~~~~~*/
+.sideBar{
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  border-right:1px solid #ddd;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.sideBar h1 {
+  position:relative;
+  height: 160px;
+}
+/* .sideBar h1 a{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  top:0;
+  width:100px;
+  height:100px;
+  background-color: #e5e5e5;
+  border-radius: 50%;
+  text-indent: -9999px;
+  display: block;
+}
+.sideBar h1 a:before{
+  content:"영수";
+  width:100px;
+  height:100px;
+  display:block;
+  text-align: center;
+  line-height: 100px;
+  font-size: 40px;
+  color: #fff;
+  position: absolute;
+  text-indent: 0px;
+} */
+.sideBar nav{
+  width:  100%;
+  height: 100%;
+  padding: 0px 0px 200px 70px;
+  box-sizing: border-box;
+}
+.sideBar nav ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  align-items: center;
+  gap:30px;
+}
+.sideBar nav ul li{
+  width: 100%;
+  position:relative;
+}
+
+.sideBar nav ul li a{  
+  padding: 10px 11px;
+  box-sizing: border-box;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  font-size: 25px;
+  color: #aaa;
+  transition: 1s all;
+}
+.sideBar nav ul li a.current{
+  color:#000;
+  font-weight: bold;
+}
+.sideBar nav ul li span{
+  display:block;
+  width:10px;
+  height:10px;
+  background-color:#ddd;
+  position:absolute;
+  top:calc(50% - 5px);
+  right: -5px;
+  border-radius: 100%;
+  transition: 1s all;
+}
+.sideBar nav ul li .currentCircle{
+  background-color:#000;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~ about 개별 ~~~~~~~~~~~~~~~~~~~~~ */
+#about{
+  height:100%;
+}
+#about .block_center{
+  overflow: hidden;
+}
+#about .block_center div{
+  
+}
+#about .block_center h2{ 
+  
+}
+#about .block_center .introduce{ 
+  display: flex;
+  justify-content: space-between;
+}
+#about .block_center .introduce .leftIntroduce{ 
+  width: 30%; 
+  margin-left: -460px;
+  animation-name:leftToRight;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+@keyframes leftToRight{
+  100%{
+    margin-left:0px;
+  }
+}
+#about .block_center .introduce .leftIntroduce>div{
+  padding:10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 7px 7px 10px rgba(0,0,0,0.3);
+}
+#about .block_center .introduce .leftIntroduce .top{ 
+  margin-bottom: 40px;
+}
+#about .block_center .introduce .leftIntroduce .top h3{ 
+  font-size:30px;
+  margin-bottom:20px;
+  text-transform: uppercase;
+}
+#about .block_center .introduce .leftIntroduce .top dl{ 
+  
+}
+#about .block_center .introduce .leftIntroduce .top dl div{ 
+ line-height:1.8 
+}
+#about .block_center .introduce .leftIntroduce .top dl div::before {
+  content:"";
+  display:inline-block;
+  width:5px;
+  height:5px;
+  background-color:grey;
+  border-radius:100%;
+  vertical-align: middle;
+}
+#about .block_center .introduce .leftIntroduce .top dl div dt,#about .block_center .introduce .leftIntroduce .top dl div dd{ 
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#about .block_center .introduce .leftIntroduce .bottom{ 
+  
+}
+#about .block_center .introduce .leftIntroduce .bottom h3{ 
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+#about .block_center .introduce .leftIntroduce .bottom p{   
+  line-height: 1.6;
+}
+#about .block_center .introduce .rightIntroduce{ 
+  width: 60%;
+  position: relative;
+}
+#about .block_center .introduce .rightIntroduce .typing-txt{ 
+  opacity: 0;
+  font-size: 40px;
+  line-height: 2;
+}
+#about .block_center .introduce .rightIntroduce .typing-txt ul{ 
+  
+}
+#about .block_center .introduce .rightIntroduce .typing-txt ul li{ 
+
+}
+#about .block_center .introduce .rightIntroduce .typing{ 
+  font-size: 40px;
+  line-height: 2;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#about .block_center .introduce .rightIntroduce .typing ul{ 
+  height:50%;
+}
+#about .block_center .introduce .rightIntroduce .typing ul li{ 
+  
+} 
+#about .block_center .introduce .rightIntroduce .typing ul li.on {  
+  display: inline-block; 
+  animation-name: cursor; 
+  animation-duration: 0.3s; 
+  animation-iteration-count: infinite; 
+} 
+@keyframes cursor{ 
+  0%{border-right: 1px solid #fff} 
+  50%{border-right: 1px solid #000} 
+  100%{border-right: 1px solid #fff} 
+}
+
+#about .block_center .count{
+  display:flex;
+  justify-content: space-around
+}
+#about .block_center .count li{
+  width:30%;
+  box-sizing: border-box;
+  box-shadow: 7px 7px 10px rgba(0,0,0,0.3);
+  border:1px solid #ccc;
+  border-radius: 20px;
+  padding:20px 50px;
+  text-align: center;
+  line-height: 30px;
+  margin-top:30px;
+}
+#about .block_center .count li .countNum{
+  
+}
+#about .block_center .count li .countPrint{
+  
+}
+#about .block_center .count li h3{
+  
+}
+/* ~~~~~~~~~~~~~~~~~~~~~ skill ~~~~~~~~~~~~~~~~~~~~~ */
+#skill{
+ height: initial;
+ background-image: url(../img/bodyimg.jpg);
+  background-attachment: fixed; */
+}
+#skill .block_center{
+width:100%;
+}
+#skill .block_center h2{
+  
+}
+#skill .block_center .skills{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 80%;
+  margin: 0 auto;
+  column-gap: 7%;
+}
+#skill .block_center .skills li{
+  margin-bottom: 60px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 30px;
+  background-color:#fff;
+  position:relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+#skill .block_center .skills li:hover{
+  box-shadow: 0 0 10px rgba(0,0,0,0.7);
+  animation-name:wave;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes wave{
+  0,100%{
+    border-radius: 50$;
+  }
+  20%{
+    border-radius: 37% 20% 21% 25%;
+  }
+  40%{
+    border-radius: 40% 37% 25% 24%;
+  }
+  60%{
+    border-radius: 47% 40% 17% 20%;
+  }
+  80%{
+    border-radius: 45% 30% 20% 21%;
+  }
+  
+}
+  
+#skill .block_center .skills li .skillLogo{
+  margin-bottom:20px;
+  width: 150px;
+  height:150px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-indent: -9999px;
+  background-color: transparent;
+  transition:all 1s;
+  overflow: hidden;
+}
+
+#skill .block_center .skills li:nth-child(1) .skillLogo{
+  background-image:url(../img/html.png);
+}
+#skill .block_center .skills li:nth-child(2) .skillLogo{
+  background-image:url(../img/css.png);
+}
+#skill .block_center .skills li:nth-child(3) .skillLogo{
+  background-image:url(../img/javascript.png);
+}
+#skill .block_center .skills li:nth-child(4) .skillLogo{
+  background-image:url(../img/jquery.png);
+}
+#skill .block_center .skills li:nth-child(5) .skillLogo{
+  background-image:url(../img/node.png);
+}
+#skill .block_center .skills li:nth-child(6) .skillLogo{
+  background-image:url(../img/react.png);
+}
+#skill .block_center .skills li:nth-child(7) .skillLogo{
+  background-image:url(../img/bootstrap.png);
+}
+#skill .block_center .skills li:nth-child(8) .skillLogo{
+  background-image:url(../img/github.png);
+}
+#skill .block_center .skills li:hover .skillLogo{
+  transform:rotateY(360deg);
+}
+#skill .block_center .skills li h3{
+  text-align: center;
+  margin-bottom: 20px;
+  position:relative;
+}
+#skill .block_center .skills li>span{
+  display:inline-block;
+  width:100%;
+  text-align: center;
+  margin-bottom: 20px;
+  position:relative;
+}
+#skill .block_center .skills li>span::after{
+  content:"%";
+}
+#skill .block_center .skills li div{
+  width:80%;
+  margin:0 auto;
+  height:5px;
+  background-color:#000;
+  position:relative;
+}
+#skill .block_center .skills li div:nth-of-type(2) span{
+  display:inline-block;
+  width:0px;
+  height:5px;
+  transition: 2s all;
+  position:absolute;
+  left:0;
+  top:0;
+}
+#skill .block_center ul li:nth-of-type(1) div:nth-of-type(2) span{
+  background-color:#f0652a;
+}
+#skill .block_center ul li:nth-of-type(2) div:nth-of-type(2) span{
+  background-color:#33a9dc
+}
+#skill .block_center ul li:nth-of-type(3) div:nth-of-type(2) span{
+  background-color:#f0db4f;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~ portfolio ~~~~~~~~~~~~~~~~~~~~~ */
+#portfolio{
+  
+}
+#portfolio .block_center{
+  width:100%;
+}
+#portfolio .block_center h2{
+
+}
+#portfolio .block_center>div{
+  width:100%;
+}
+#portfolio .block_center ul{
+  width:100%;
+  display:flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+ 
+#portfolio .block_center ul li{
+  width:300px;
+  height:300px;
+  position:relative;
+  box-shadow: 1px 1px 10px #000;
+  border-radius: 10px;
+}
+
+#portfolio .block_center ul li:hover::before  { 
+    content:"";
+    z-index: 5;
+    border-radius: 10px;
+    position: absolute; 
+    left: 0px; 
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    display: block;
+    border: 2px dashed rgba(0,0,0,1); 
+    clip: rect(0,0,0,0);   
+    animation: maskBorder 2s infinite linear;
+}
+    
+
+@keyframes maskBorder {
+
+  /* top right bottom  left   */
+  0% { clip: rect(0,0,0,0); }
+  25% { clip: rect(0,300px,10px,0); }
+  50%{ clip: rect(0,300px,300px,290px); }
+  75% { clip: rect(300px,300px, 300px, 0px); }
+  100% { clip: rect(0,10px,300px,0); }
+
+}
+  
+#portfolio .block_center ul li figure{
+
+}
+#portfolio .block_center ul li figure a{
+
+
+}
+#portfolio .block_center ul li figure a img{
+
+}
+#portfolio .block_center ul li div{
+
+}
+/* ~~~~~~~~~~~~~~~~~~~~~ contact ~~~~~~~~~~~~~~~~~~~~~ */
+#contact{
+  height:100%;
+}
+#contact .block_center{
+
+}
+#contact .block_center h2{
+
+}
+#contact .block_center>p{
+  text-align: center;
+  font-size: 40px;
+  line-height: 300px;
+  height: 300px;
+}
+#contact .block_center .clearfix{
+width: 80%;
+  margin:0 auto;
+  text-align: center;
+margin-bottom: 100px;
+}
+#contact .block_center .clearfix>div{
+  width: 40%;
+  font-size: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  position:relative;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 28px;
+}
+#contact .block_center .clearfix div::before{
+  content:"";
+  position:absolute;
+  width:120%;
+  height:60px;
+  background-color:#000;
+  left:-10%;
+  top:50%;
+  animation-name: borderLine;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+@keyframes borderLine{
+  0%{
+    transform:translateY(-50%) rotate(0deg);
+  }
+  100%{
+    transform:translateY(-50%) rotate(360deg);
+  }
+}
+#contact .block_center .clearfix div::after{
+  content:"";
+  position:absolute;
+  inset:4px;
+  background-color:#fff;
+  border-radius: 23px;
+}
+
+#contact .block_center .clearfix div h3{
+  font-size: 30px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index:1
+}
+#contact .block_center .clearfix div span{
+    position: relative;
+  z-index:1
+}
+#contact .block_center .sns{
+
+  text-align: center;
+}
+#contact .block_center .sns h3{
+
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+#contact .block_center .sns ul{
+
+}
+#contact .block_center .sns ul li{
+
+}
+#contact .block_center .sns ul li a{
+
+}

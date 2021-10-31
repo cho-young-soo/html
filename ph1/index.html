@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>퍼시스</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/title.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/response.css">
+  <link rel="stylesheet" href="css/font.css">
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // 헤더 위치에 따른 fix 변환
+      $(window).on("scroll",function(){
+        if($(window).scrollTop()==0){
+          $("header").css({"position":"initial"});
+          $("#title").css({"padding-top":0});
+        }else{
+          $("header").css({"position":"fixed","width":"100%","z-index":9999,"background-color":"#fff","box-shadow":"0 5px 10px rgba(0,0,0,0.3)"});
+          $("#title").css({"padding-top":"75px"});
+        }        
+      });
+      // 메뉴버튼 클릭시 메뉴창 등장
+      $("header .w1200 .menuBtn").on("click",function(){
+        $("html").css({"overflow":"hidden"});
+        $("header .w1200").append("<div class='mobileMenu'></div>");
+        $("header .w1200 .gnb").clone().appendTo("header .w1200 .mobileMenu");
+        $("header .w1200 .mobileMenu .gnb").css({"display":"flex","position":"fixed","left":0,"right":0,"top":0,"bottom":0,"background-color":"rgba(0,0,0,0.9)","z-index":10});
+        $("header .w1200 .mobileMenu").prepend("<div><button class='closeBtn'/></div>");
+        // 닫기버튼 클릭시 메뉴창 사라짐
+        $("header .w1200 .mobileMenu div .closeBtn").on("click",function(){
+          $("html").css({"overflow":"auto"});
+          $("header .w1200 .mobileMenu").remove();
+        });
+        // 서브메뉴
+        $("header .w1200 .mobileMenu .gnb li h2").on("click",function(){
+            $(this).siblings().css({"display":"block"});
+            $(this).parent().siblings().children(".hide").css({"display":"none"});
+            $(this).parent().addClass("clicked");
+            $(this).parent().siblings().removeClass("clicked");
+        });
+        $(window).resize(function(){
+          if($(window).width()>=1024){
+            $(".mobileMenu").remove();
+            $("html").css({"overflow":"auto"});
+          }
+        })
+      });
+      //  사이즈에 따른 세부메뉴창 등장 방식
+
+      if($("html").width()>1024){
+          $("header .w1200 .gnb li").hover(function(){
+            $(this).children(".hide").css({"display":"block"})
+            $(this).siblings().children(".hide").css({"display":"none"})
+          },
+          function(){
+            $(this).children(".hide").css({"display":"none"})
+          }
+          );
+        }else{
+          console.log("작다");
+
+        }
+
+      // 타이틀 리스트 추가
+      $("#title").append("<div class='titleList'></div>");
+
+      for (i = 1; i <= $("#title ul li").length; i++) {
+        $("#title .titleList").append("<div></div>");
+      }
+
+      // 첫 타이틀 리스트 표시
+      var i = 1;
+      var i2;
+      $("#title .titleList div:first-child").addClass("currentT");
+      
+      //  자동으로 돌아갈때 타이틀 슬라이드 함수
+      function slideMove() {
+        i2 = i + 1;
+        if (i < $("#title ul li").length) {
+          $("#title ul li:nth-child(" + i + ")").fadeOut(2000); // i번째 이미지 fadeOut
+          $("#title ul li:nth-child(" + i2 + ")").fadeIn(2000); //i+1번째 이미지 fadeIn
+          $("#title .titleList div:nth-child(" + i2 + ")").addClass("currentT"); // 목차 i+1번 째에 클래스를 추가해 색상을 변경
+          $("#title .titleList div:nth-child(" + i2 + ")").siblings().removeClass(
+            "currentT"); // 나머지 목차에서 class를 제거해서 초기화
+          i++;
+        } else {
+          $("#title ul li:nth-child(" + i + ")").fadeOut(2000);
+          i = 1;
+          i2 = 1;
+          $("#title ul li:nth-child(" + i + ")").fadeIn(2000);
+          $("#title .titleList div:nth-child(" + i2 + ")").addClass("currentT");
+          $("#title .titleList div:nth-child(" + i2 + ")").siblings().removeClass("currentT");
+        }
+      }
+
+      // 자동으로 돌아감
+      var slideTitle = setInterval(slideMove, 4000);
+      
+      // 목차를 클릭했을 경우
+      var clickedValue;
+      var clickedValue2;
+      
+      // 목차를 클릭했을 때 타이틀 슬라이드 함수
+      function slideMove2() {
+        clickedValue2 = clickedValue + 1;
+        if (clickedValue < $("#title ul li").length) {
+          $("#title ul li:nth-child(" + clickedValue + ")").fadeOut(2000); // 클릭한 이미지 fadeOut
+          $("#title ul li:nth-child(" + clickedValue2 + ")").fadeIn(2000); // 클릭한 다음 순번 이미지 fadeIn
+          $("#title .titleList div:nth-child(" + clickedValue2 + ")").addClass(
+          "currentT"); // 클락한 목차+1번 째에 클래스를 추가해 색상을 변경
+          $("#title .titleList div:nth-child(" + clickedValue2 + ")").siblings().removeClass("currentT"); // 나머지 목차에서 class를 제거해서 초기화
+          clickedValue++;
+        } else {
+          $("#title ul li:nth-child(" + clickedValue + ")").fadeOut(2000);
+          clickedValue = 1;
+          clickedValue2 = 1;
+          $("#title ul li:nth-child(" + clickedValue + ")").fadeIn(2000);
+          $("#title .titleList div:nth-child(" + clickedValue2 + ")").addClass("currentT");
+          $("#title .titleList div:nth-child(" + clickedValue2 + ")").siblings().removeClass("currentT");
+        }
+      }
+
+      // 목차를 클릭했을 때 함수 작동
+      var clickcount=1;
+      var slideTitle2;
+      $("#title .titleList div").on("click", function () {
+        if(clickcount<=1){
+          clickedValue = $(this).index() + 1;
+          clearInterval(slideTitle);
+          $("#title ul li:nth-child(" + i + ")").fadeOut(2000);
+          $("#title ul li:nth-child(" + clickedValue + ")").fadeIn(2000);
+          $("#title .titleList div:nth-child(" + clickedValue + ")").addClass("currentT");
+          $("#title .titleList div:nth-child(" + clickedValue + ")").siblings().removeClass("currentT");
+          slideTitle2 = setInterval(function () {
+            slideMove2();
+          }, 4000);
+          clickcount++;
+        }else{
+          i=clickedValue;
+          clickedValue = $(this).index() + 1;
+          clearInterval(slideTitle2);
+          $("#title ul li:nth-child(" + i + ")").fadeOut(2000);
+          $("#title ul li:nth-child(" + clickedValue + ")").fadeIn(2000);
+          $("#title .titleList div:nth-child(" + clickedValue + ")").addClass("currentT");
+          $("#title .titleList div:nth-child(" + clickedValue + ")").siblings().removeClass("currentT");
+          slideTitle2 = setInterval(function () {
+            slideMove2();
+          }, 4000);
+        }
+      });
+
+      // 호버시 자세히 보러가기  생성
+      function listMoreAdd() {
+        $(this).append("<div class='listMore'>자세히 보러가기 ><div>");
+        $(".listMore").css({"width":$('.w1200 ul li a img').width()});
+      };
+
+      function listMoreRemove() {
+        $(".listMore").remove();
+      };
+      $("section .w1200 ul li a").hover(listMoreAdd, listMoreRemove);
+
+      // 쇼룸 리스트 클릭시 해당 이미지 보이기
+      $("#showroom .w1200 ul li:nth-child(1)").addClass("select");
+      $("#showroom .w1200 ul li:not(:last-child)").click(function () {
+        $(this).addClass("select");
+        $(this).siblings().removeClass("select")
+        var image_index = $(this).index() + 1
+        $("#showroom img").attr("src", "img/showroom/04_shoroom_" + image_index + ".jpg")
+      });
+
+
+      // 스크롤 투  탑
+      $(".toTop span").on("click", function () {
+        $("html, body").animate({
+          scrollTop: "0"
+        }, 1000);
+      });
+
+      // 사이드 바 생성
+      $(".sideBar").on("click", function(){
+          $(".sideBar h2 span").toggleClass("clicked");
+          $(".sideBar ul").fadeToggle();
+      });
+      
+    });
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="w1200">
+      <h1 class="logo"><a href="">퍼시스<img src="img/logo/text_logo.png" alt=""></a></h1>
+      <ul class="gnb">
+        <li class="productMenu">
+          <h2>제품정보</h2>
+          <div class="hide">
+            <div>
+              <h3>오피스</h3>
+              <ul>
+                <li>
+                  <a href="">데스크&패널</a>
+                </li>
+                <li>
+                  <a href="">프리미어클래스</a>
+                </li>
+                <li>
+                  <a href="">중역욕의자</a>
+                </li>
+                <li>
+                  <a href="">사무용의자</a>
+                </li>
+                <li>
+                  <a href="">회의용의자</a>
+                </li>
+                <li>
+                  <a href="">로비의자</a>
+                </li>
+                <li>
+                  <a href="">회의&강의 시스템</a>
+                </li>
+                <li>
+                  <a href="">소파</a>
+                </li>
+                <li>
+                  <a href="">소파테이블</a>
+                </li>
+                <li>
+                  <a href="">도서관&기숙사</a>
+                </li>
+                <li>
+                  <a href="">액세서리</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3>헬스케어</h3>
+              <ul>
+                <li>
+                  <a href="">의료장비</a>
+                </li>
+                <li>
+                  <a href="">병실</a>
+                </li>
+                <li>
+                  <a href="">진료실</a>
+                </li>
+                <li>
+                  <a href="">간호스테이션</a>
+                </li>
+                <li>
+                  <a href="">업무공간</a>
+                </li>
+                <li>
+                  <a href="">휴게대기</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3>랩</h3>
+              <ul>
+                <li>
+                  <a href="">실험대</a>
+                </li>
+                <li>
+                  <a href="">기초장비</a>
+                </li>
+                <li>
+                  <a href="">초중고 과학실</a>
+                </li>
+                <li>
+                  <a href="">의자</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="serviceMenu">
+          <h2>서비스</h2>
+          <div class="hide">
+            <ul>
+              <li>
+                <a href="">사무환경 컨설팅</a>
+              </li>
+              <li>
+                <a href="">해외수출 프로그램</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class=storeMenu>
+          <h2>쇼룸·대리점</h2>
+          <div class="hide">
+            <ul>
+              <li>
+                <a href="">쇼룸안내</a>
+              </li>
+              <li>
+                <a href="">대리점 안내</a>
+              </li>
+              <li>
+                <a href="">오피스 컨설턴트 소개</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class=supplyMenu>
+          <h2>납품실적</h2>
+          <div class="hide">
+            <ul>
+              <li>
+                <a href="">주요 납품사례</a>
+              </li>
+              <li>
+                <a href="">클라이언트 목록</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class=researchMenu>
+          <h2>리서치</h2>
+          <div class="hide">
+            <ul>
+              <li>
+                <a href="">R & D 센터</a>
+              </li>
+              <li>
+                <a href="">퍼시스 북스</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class=companyMenu>
+          <h2>회사소개</h2>
+          <div class="hide">
+            <ul>
+              <li>
+                <a href="">퍼시스그룹</a>
+              </li>
+              <li>
+                <a href="">퍼시스</a>
+              </li>
+              <li>
+                <a href="">퍼시스 네트워크</a>
+              </li>
+              <li>
+                <a href="">미디어센터</a>
+              </li>
+              <li>
+                <a href="">IR</a>
+              </li>
+              <li>
+                <a href="">협력업체등록안내</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class=supportMenu>
+          <h2>고객지원</h2>
+          <div class="hide">
+            <ul>
+              <li>
+                <a href="">제품/서비스 문의</a>
+              </li>
+              <li>
+                <a href="">A/S 문의</a>
+              </li>
+              <li>
+                <a href="">기타 문의</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      <div class="enb">
+        <a href="" class="finder">제품파인더</a>
+        <span>
+          <a href="">인재채용</a>
+          <a href="">GLOBAL FURSYS</a>
+        </span>
+      </div>
+      <div class="menuBtn">
+        <button class="menu">
+          <span class="menuShape"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div id="title">
+    <ul>
+      <li>
+        <div class="titlePosition">
+          <h2>BRAND STORY</h2>
+          <p>사무환경 프로젝트<br>#4 퍼시스 본사</p>
+          <a href="">자세히 보러가기</a>
+        </div>
+      </li>
+      <li class="hide">
+        <div class="titlePosition">
+          <h2>FURSYS BOOKS</h2>
+          <p>사무환경이 문화를 만든다<br><strong>Vol.2 오피스 일상을 바꾸다</strong></p>
+          <a href="">자세히 보러가기</a>
+        </div>
+      </li>
+      <li class="hide">
+        <div class="titlePosition">
+          <h2>FURSYS NEWSLETTER</h2>
+          <p>오시프 속 꼭 필요한 소식들이 궁금하다면? 지금, 뉴스레터를 구독하세요.</p>
+          <a href="">신청하기</a>
+        </div>
+      </li>
+      <li class="hide">
+        <div class="titlePosition">
+          <h2>CAMPAIGN</h2>
+          <p>사무환경이 문화를 만듭니다.</p>
+          <a href="">자세히 보러가기</a>
+        </div>
+      </li>
+      <li class="hide">
+        <div class="titlePosition">
+          <h2>BRAND STORY</h2>
+          <p>사무환경 프로젝트<br>#3 스튜디오 원</p>
+          <a href="">자세히 보러가기</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <main>
+    <section id="issue">
+      <div class="w1200">
+        <h2 class="mainT">issues</h2>
+        <p class="mainP">퍼시스의 다양한 소식들을 만나보세요.</p>
+        <ul>
+          <li>
+            <a href="">
+              <img src="img/issues/issues.jpg" alt="사무환경">
+              <h3>사무환경 컨설팅</h3>
+              <p>퍼시스의 노하우와 전문분석 툴을 통해<br>전문화된 공간계획을 제안합니다.</p>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="img/issues/issues_02.jpg" alt="새제품">
+              <h3>NEW PRODUCT</h3>
+              <p>스마트 워킹 스토리지 (SWS)<br>스마트 워크를 위한 개인 사물함</p>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="img/issues/issues_03.jpg" alt="뉴스">
+              <h3>NEWS</h3>
+              <p>플레이웍스 (PLAYWORKS)<br>IF, 레드닷 디자인 어워드 수상</p>
+            </a>
+        </ul>
+        <figure>
+          <figcaption>
+            <h2>OFFICE WE LOVE.</h2>
+            <p>Vol.6 '밀레니얼 세대의 워킹라이프스타일과 사무환경'발간</p>
+            <a href="">자세히 보러가기</a>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+    <section id="showroom">
+      <div class="w1200">
+        <h2 class="mainT">showroom</h2>
+        <p class="mainP">퍼시스의 제품을 가장 가까이서 만나보세요.</p>
+        <ul>
+          <li>서울 본사쇼룸</li>
+          <li>광화문센터</li>
+          <li>부산센터</li>
+          <li>대구센터</li>
+          <li>대전센터</li>
+          <li>광주센터</li>
+          <li class="showMore"><a href="">쇼룸전체보기</a></li>
+        </ul>
+      </div>
+      <img src="img/showroom/04_shoroom_1.jpg" alt="서울본사쇼룸">
+    </section>
+    <section id="news">
+      <div class="w1200">
+        <h2 class="mainT">news</h2>
+        <p class="mainP">퍼시스의 새로운 소식들</p>
+        <table>
+          <tbody>
+            <tr>
+              <td>공지사항</td>
+              <td><a href="">[공지] 퍼시스 개인정보처리방침 개정 안내</a></td>
+              <td>2020-12-11</td>
+            </tr>
+            <tr>
+              <td>공지사항</td>
+              <td><a href="">[공지] 퍼시스 개인정보처리방침 개정 안내</a></td>
+              <td>2020-11-05</td>
+            </tr>
+            <tr>
+              <td>퍼시스활동</td>
+              <td><a href="">퍼시스, 부산센터 쇼룸에 친환경 '나아바 그린월'공간 조성</a></td>
+              <td>2020-09-17</td>
+            </tr>
+            <tr>
+              <td>퍼시스활동</td>
+              <td><a href="">퍼시스, 밀레니얼 워킹라이프스타일 다룬 사무환경 전문 매거진 ‘오피스 위 러브(Office we love.)’ vol.6 발간</a></td>
+              <td>2020-09-17</td>
+            </tr>
+          </tbody>
+        </table>
+        <a href="" class="more">more</a>
+      </div>
+    </section>
+    <section id="casestudy">
+      <div class="w1200">
+        <h2 class="mainT">case study</h2>
+        <p class="mainP">퍼시스와 함께한 공간 이야기</p>
+        <ul>
+          <li>
+            <a href="">
+              <img src="img/casestudy/case_study_01.jpg" alt="한국쓰리엠">
+              <h3>한국쓰리엠</h3>
+              <p>자율성과 유연성을 지원하는 오피스</p>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="img/casestudy/case_study_02.jpg" alt="카카오게임즈">
+              <h3>카카오게임즈</h3>
+              <p>일상이 게임이 되는 곳</p>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="img/casestudy/case_study_03.jpg" alt="유니언워크">
+              <h3>유니언워크</h3>
+              <p>밀레니얼 세대가 모여 일하는 새로운 공간</p>
+            </a>
+          </li>
+        </ul>
+        <a href="" class="more">more</a>
+      </div>
+    </section>
+    <aside id="blogbanner">
+      <a href="">
+        <div>
+          <div>
+            <h2>사무환경, 오피스 라이프에 대한 이야기</h2>
+            <p>블로그 방문하기</p>
+          </div>
+        </div>
+      </a>
+    </aside>
+    <div class="toTop">
+      <span>scroll to top</span>
+    </div>
+    <div class="sideBar">
+      <h2>quick menu<span>&lt;</span></h2>
+      <ul class="hide">
+        <li><a href="">1:1 상담문의</a></li>
+        <li><a href="">A/S 신청</a></li>
+        <li><a href="">대리점 안내</a></li>
+        <li><a href="">쇼룸 안내</a></li>
+        <li><a href="">카탈로그 신청</a></li>
+        <li><a href="">블로그</a></li>
+        <li><a href="">페이스북</a></li>
+        <li><a href="">유튜브</a></li>
+      </ul>
+
+    </div>
+  </main>
+  <footer>
+    <div class="company">
+      <div class="company_inform">
+        <div>
+          <h2>(주)퍼시스</h2>
+          <p>Copyright (c) 2020 Fursys Inc.<br>All right reserved.</p>
+        </div>
+        <div>
+          <div class="inform-left">
+            <dl>
+              <dt>대표이사</dt>
+              <dd>배상돈,윤기언</dd>
+            </dl>
+            <dl>
+              <dt>사업자번호</dt>
+              <dd>215-81-20534</dd>
+            </dl>
+            <dl>
+              <dt>주소</dt>
+              <dd>138-857/서울특별시 송파구 오금로 311(오금동45-1) 퍼시스 빌딩</dd>
+            </dl>
+            <dl>
+              <dt>대표번호</dt>
+              <dd>02-443-9999</dd>
+            </dl>
+          </div>
+          <div class="inform-right">
+            <dl>
+              <dt>A/S 대표번호</dt>
+              <dd>1588-1244</dd>
+            </dl>
+            <dl>
+              <dt>매주 월~금요일</dt>
+              <dd>09:30~17:30</dd>
+              <dd>(점심시간 12:30~13:30 / 토,일,공휴일 상담실 휴무)</dd>
+            </dl>
+          </div>
+        </div>
+        <ul>
+          <li><a href="#none">개인정보 처리방침</a></li>
+          <li><a href="#none">사이트맵</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="list">
+      <div class="list_left">
+        <ul>
+          <li><a href="">fursys</a></li>
+          <li><a href="">iloom</a></li>
+          <li><a href="">sidiz</a></li>
+          <li><a href="">desker</a></li>
+          <li><a href="">slou</a></li>
+          <li><a href="">alloso</a></li>
+        </ul>
+      </div>
+      <div class="list_right">
+        <ul>
+          <li><a href="">blog</a></li>
+          <li><a href="">facebook</a></li>
+          <li><a href="">youtube</a></li>
+          <li><a href="">instagram</a></li>
+        </ul>
+        <select name="family" id="familysite">
+          <option value="">Fursys Group</option>
+          <option value="">일룸</option>
+          <option value="">시디즈</option>
+          <option value="">데스커</option>
+          <option value="">슬로우</option>
+          <option value="">알로소</option>
+          <option value="">바로스</option>
+          <option value="">목훈재단</option>
+        </select>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
