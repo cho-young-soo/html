@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+/* 공통클래스 스타일 */
+.hide {
+  display: none;
+}
+.center{
+  margin: 0 auto;
+
+}
+.block{
+  display:block;
+}
+input:focus{
+  outline: none;
+}
