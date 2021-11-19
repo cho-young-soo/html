@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/gooey.css">
+
+  <script src="js/jquery-3.6.0.js"></script>
+
+</head>
+
+<body>
+  <!-- custom cursors -->
+  <div class="cursor-1"></div>
+  <div class="cursor-2"></div>
+  <div id="menu-bars" class="fas fa-bars"></div>
+
+  <!-- header section start -->
+  <header>
+    <h1>
+      <span class="bubbles-wrapper">
+        <span>조영수</span>
+        <span>C</span>
+        <span>Y</span>
+        <span>S</span>
+      </span>
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+          <filter id="gooey">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+            <feColorMatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 15 -5" result="gooey" />
+            <feBlend in="SourceGraphic" in2="gooey" />
+          </filter>
+        </defs>
+      </svg>
+    </h1>
+    <nav class="navbar">
+      <a href="#about" class="menuActive">about</a>
+      <a href="#skill">skill</a>
+      <a href="#portfolio">portfolio</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </header>
+  <!-- header section ends -->
+  <!-- home section starts -->
+  <section id="about">
+    <h2 class="heading">About <span>me</span></h2>
+    <div class="content">
+      <div class="top">
+        <h3>WEB PUBLISHER</h3>
+        <p>HTML문서를 시멘틱 마크업와 웹 접근성 마크업 규칙에 따라서 만들 수 있습니다. CSS를 활용하여 디자인 할 수도 있고 애니메이션 효과를 주는 것도 가능합니다. 미디어 쿼리를 통해 반응형 및
+          디바이스 환경에 따르는 퍼블리싱이 가능합니다. Javascript 및 Jquery의 기본문법을 이해하고 있으며 이를 활용해 Jquery를 활용한 동적 코드 작성에 능숙합니다</p>
+      </div>
+      <div class="bottom">
+        <h3>Profile</h3>
+        <div>
+          <i class="fas fa-male"></i>
+          <p>이름 : <span>조영수</span></p>
+          <i class="fas fa-birthday-cake"></i></i>
+          <p>생년월일 : <span>1994년 05월 03일</span></p>
+          <i class="fas fa-map-marker-alt"></i></i>
+          <p>거주지 : <span>경기도 오산시</span></p>
+        </div>
+      </div>
+
+    </div>
+    <div class="typing">
+      <div class="typing-txt">
+        <ul>
+          <li>안녕하세요.</li>
+          <li>WEB PUBLISHER</li>
+          <li>조영수입니다.</li>
+          <li>제 포트폴리오 사이트에 오신걸</li>
+          <li>환영합니다.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- home section ends -->
+  <!-- about section starts -->
+  <section class="skill" id="skill">
+    <h2 class="heading"><span>my</span> skills</h2>
+    <div class="skillContent">
+      <div class="webSkill">
+        <div class="progress">
+          <h3 class="skillActive"> HTML <span> 95 </span></h3>
+          <div class="bar"><span></span></div>
+        </div>
+        <div class="progress">
+          <h3> CSS <span> 90 </span></h3>
+          <div class="bar"><span></span></div>
+        </div>
+        <div class="progress">
+          <h3> Javascript & jquery <span> 80 </span></h3>
+          <div class="bar"><span></span></div>
+        </div>
+        <div class="progress">
+          <h3> BootStrap <span> 60 </span></h3>
+          <div class="bar"><span></span></div>
+        </div>
+        <div class="progress">
+          <h3> Git-hub <span> 80 </span></h3>
+          <div class="bar"><span></span></div>
+        </div>
+      </div>
+      <div class="skillinform">
+        <div class="skillShow">
+          <img src="images/html.png" alt="HTML5">
+          <h3>HTML5</h3>
+          <p>시멘틱 구조와 웹접근성 구조에 맞는 마크업을 작성할 수 있습니다.</p>
+        </div>
+        <div>
+          <img src="images/css.png" alt="CSS3">
+          <h3>CSS3</h3>
+          <p>CSS3 속성을 이해하고 애니메이션 효과를 줄 수도 있습니다. 미디워쿼리를 활용해 반응형 웹을 제작할 수 있습니다.</p>
+        </div>
+        <div>
+          <img src="images/JavaScript.png" alt="Javascript">
+          <h3>Javascript</h3>
+          <p>동적인 효과를 줄 수 있으며 다양한 플러그인을 활용할 수 있습니다.</p>
+        </div>
+        <div>
+          <img src="images/bootstrap.png" alt="bootstrap">
+          <h3>BootStrap</h3>
+          <p>부트스트랩을 활용해 홈페이지를 제작 할 수 있습니다.</p>
+        </div>
+        <div>
+          <img src="images/github.png" alt="git-hub">
+          <h3>git-hub</h3>
+          <p>git-hub를 통해 형상관리유지 업무를 수행 할 수 있습니다.</p>
+        </div>
+      </div>
+      <div class="box-container">
+        <div class="box">
+          <h3>Sociability</h3>
+          <span>90</span>
+          <p></p>
+        </div>
+        <div class="box">
+          <h3>Responsibility</h3>
+          <span>95</span>
+          <p></p>
+        </div>
+        <div class="box">
+          <h3>Flexibility</h3>
+          <span>100</span>
+          <p></p>
+        </div>
+      </div>
+  </section>
+  <!-- about section ends -->
+  <!-- portfolio section starts -->
+  <section class="portfolio" id="portfolio">
+    <h2 class="heading"><span>my</span> portfolio</h2>
+    <div class="box-container">
+      <div class="box">
+        <img src="images/fursys.jpg" alt="fursys">
+        <h3>project 01</h3>
+        <div class="icons">
+          <a href="#" class="fab fa-github" target="_blank"></a>
+          <a href="ph1/index.html" class="fas fa-share" target="_blank"></a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/acro.jpg" alt="acro">
+        <h3>project 0</h3>
+        <div class="icons">
+          <a href="#" class="fab fa-github" target="_blank"></a>
+          <a href="#" class="fas fa-share" target="_blank"></a>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="images/noelohills.jpg" alt="noelohills">
+        <h3>project 0</h3>
+        <div class="icons">
+          <a href="#" class="fab fa-github" target="_blank"></a>
+          <a href="#" class="fas fa-share" target="_blank"></a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/seumteo.jpg" alt="세움터">
+        <h3>project 0</h3>
+        <div class="icons">
+          <a href="#" class="fab fa-github" target="_blank"></a>
+          <a href="#" class="fas fa-share" target="_blank"></a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/stated.jpg" alt="stated">
+        <h3>project 0</h3>
+        <div class="icons">
+          <a href="#" class="fab fa-github" target="_blank"></a>
+          <a href="#" class="fas fa-share" target="_blank"></a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="images/wemade.jpg" alt="위메이드">
+        <h3>project 0</h3>
+        <div class="icons">
+          <a href="#" class="fab fa-github" target="_blank"></a>
+          <a href="#" class="fas fa-share" target="_blank"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- portfolio section ends -->
+  <!-- contact section starts -->
+  <section class="contact" id="contact">
+    <h2 class="heading">contact <span>me</span></h2>
+    <div class="icons-container">
+      <div class="icons">
+        <i class="fas fa-envelope"></i>
+        <h3>my email</h3>
+        <p>narin2460@gmail.com</p>
+      </div>
+      <div class="icons">
+        <i class="fas fa-phone"></i>
+        <h3>my number</h3>
+        <p>010-3081-2816</p>
+      </div>
+      <div class="icons">
+        <i class="fas fa-map-marked-alt"></i>
+        <h3>my addresss</h3>
+        <p>경기도 오산시</p>
+      </div>
+    </div>
+    <div class="row">
+      <form class="gform" method="POST" data-email="narin2460@gmail.com" action="https://script.google.com/macros/s/AKfycbxWTLrF9BUBS8JepdKLaK7kVnhPP8ifEvuBTC7u/exec">
+        <input name="name" type="text" placeholder="name" class="box">
+        <input name="email" type="email" placeholder="email" class="box">
+        <input name="number" type="text" placeholder="number" class="box">
+
+        <textarea name="message" placeholder="message" id="" cols="30" rows="10"></textarea>
+
+        <button class="btn">send message</button>
+      </form>
+  </section>
+  <!-- contact section ends -->
+  <!-- footer section starts -->
+  <footer>created by <span>mr. web designer</span> | all rights reserved!</footer>
+  <!-- footer section ends -->
+  <!-- custom js file link -->
+  <script src="js/script.js"></script>
+  <script data-cfasync="false" type="text/javascript"
+src="js/form-submission-handler.js"></script>
+</body>
+
+</html>
