@@ -1,0 +1,163 @@
+@charset "UTF-8";
+@media screen and (max-width:1160px){
+  header .block_center{
+    position:relative;
+  }
+  header .block_center h1{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+  header .block_center nav{
+    display:inline-flex;
+    width: 100%;
+    justify-content: end;
+  }
+  header .block_center .menuBtn{
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: #fdd445;
+  border-radius: 50%;
+  position:relative;
+  cursor:pointer;
+  margin-left: 50px;
+  }
+  header .block_center .menuBtn::before,
+  header .block_center .menuBtn::after{
+    content:"";
+    display:block;
+    position:absolute;
+    width:60%;
+    height: 2px;
+    background-color:#fff;
+    left:50%;
+    transform:translateX(-50%) translateY(-50%);
+    top:40%
+  }
+  header .block_center .menuBtn::after{
+    top:60%;
+  }
+  header .block_center nav .gnb{
+    position:fixed;
+    inset:0;
+    background-color:#fff;
+    margin: 0;
+    z-index: 10;
+  }
+  header .block_center nav .gnb.open{
+    display:flex;
+    flex-direction: column;
+    padding: 30px 50px;
+  }
+  header .block_center nav .gnb .login.hide,
+  header .block_center nav .gnb .cs.hide{
+    display:block;
+  }
+    header .block_center nav .gnb .close{
+      display:inline-block;
+      position: fixed;
+      top: 30px;
+      right: 80px;
+}
+  header .block_center nav .gnb .closeBtn{
+    border-radius:50%;
+    border:none;
+    background-color:#fdd445
+  }
+  header .block_center nav .gnb .closeBtn::before,
+  header .block_center nav .gnb .closeBtn::after{
+    width:60%;
+  }
+  header .block_center nav .gnb .login.hide p{
+    color:#676d72;
+    margin-bottom:10px;
+  }
+  header .block_center nav .gnb .login.hide a{
+    padding-left:30px;
+    position:relative;
+    color:#fdd445;
+  }
+  header .block_center nav .gnb .login.hide a::before{
+    content:"";
+    display:block;
+    position: absolute;
+    left:0;
+    width:16px;
+    height:16px;
+    background-image: url("../img/ico-login-y.png");
+    background-size:contain;
+    
+    top: 60%;
+    transform: translateY(-50%);
+  }
+  header .block_center nav .gnb > ul:not(.cs){
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  header .block_center nav .gnb > ul:not(.cs) > li{
+    width:100%;
+    text-align: left;
+    margin: 0 !important;
+    font-size: 30px;
+  }
+  
+  header .block_center nav .gnb > ul > li > a div{
+    margin:0 !important;
+  }
+  header .block_center nav .gnb>ul> li.hover > a div{
+    font-size:30px;
+    font-weight: inherit;
+    color:inherit;
+  }
+
+  header .block_center nav .gnb > ul > li ul{
+    position: initial;
+  }
+  header .block_center nav .gnb > ul > li:hover ul{
+    display:none;
+  }
+  header .block_center nav .gnb > ul > li ul.open{
+    display:block;
+    transform: initial;
+    width: 100%;
+    padding: 20px;
+    box-shadow: none;
+  }
+  header .block_center nav .gnb > ul > li ul li{
+    text-align: left;
+  }  
+  header .block_center nav .gnb > ul > li ul li a{
+    font-size:25px;
+
+  }
+  header .block_center nav .gnb .cs.hide{
+    padding-top:15px;
+    border-top:1px solid #676d72;
+    padding-bottom: 30px;
+  }
+  header .block_center nav .gnb .cs.hide li{
+    line-height: 2;
+  }
+  header .block_center nav .gnb .cs.hide a{
+    font-size:20px;
+  }
+/*  content  */
+  #information .block_center div.clearfix > div{
+    padding-left:50px;
+  }
+  #information .block_center div.clearfix:nth-child(2n) > div{
+
+  }
+@media screen and (max-width:854px){
+  #products .block_center ul{
+    font-size: 12px;
+  }
+  footer .block_center .footer_menu li a{
+    margin-right: 15px;
+  }
+  footer .block_center .footer_inform li:nth-of-type(5){
+  margin-right:0;
+  }
+}

@@ -1,0 +1,87 @@
+@charset "utf-8";
+footer{
+  background-color: #f9f9f9;
+  padding: 50px;
+}
+footer .block_center{
+  position:relative;
+}
+footer .block_center .footer_menu{
+
+}
+footer .block_center .footer_menu li{
+  
+  float: left;
+}
+footer .block_center .footer_menu li:nth-of-type(1){
+  margin-right: 60px;
+  font-weight: 600;
+  color:#f9ce42;
+  cursor: pointer;
+}
+footer .block_center .footer_menu li:nth-child(1)::after{
+  content: ">";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  line-height: 12px;
+  border: 1px solid #f9ce42;
+  text-align: center;
+  border-radius: 50%;
+  transform: rotate(-90deg);
+  vertical-align: middle;
+  margin-top:-4px;
+  margin-left:20px
+}
+footer .block_center .footer_menu li.down::after{
+  transform: rotate(90deg);
+}
+footer .block_center .footer_menu li a{
+  margin-right: 60px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #676d72;
+}
+
+
+footer .block_center .footer_inform{
+
+  padding-top: 20px;
+}
+footer .block_center .footer_inform li{
+  float: left;
+  margin-right: 60px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+footer .block_center .footer_inform li span{
+  
+  font-size: 14px;
+  color: #7e868c;
+  padding-right: 20px;
+}
+footer .block_center p{
+
+  margin-top: 40px;
+}
+footer .block_center .footer_instagram{
+    position:absolute;
+  top:0;
+  right:0; 
+}
+footer .block_center .footer_instagram::before{
+  content: "";
+  display:inline-block;
+  width:24px;
+  height:24px;
+  background-image: url(https://www.noelohills.com/web/upload/noelo/common/ico_instagram.png);
+  vertical-align: middle;
+  margin-right:10px;
+  
+}
+footer .block_center .footer_instagram a{
+  vertical-align: middle;
+  color: #676d72;
+  font-weight: 600;
+}
+

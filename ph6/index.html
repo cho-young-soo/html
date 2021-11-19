@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css"
+    integrity="sha512-IJEbgDEF7OeKJRa0MY2PApnyJHRIsgzCveek4ec8VWQ+7KG3ZSKVNYa5xP/Gh0hVP0Mwb+gBsk+GwR3JQGhQNg=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/title.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/response.css">
+  <link rel="stylesheet" href="css/font.css">
+  <script src="js/jquery-3.6.0.js"></script>
+  <script>
+    $(document).ready(
+      function () {
+        // 스크롤시 nav 배경색
+        if ($(window).scrollTop() > 0) {
+          $("header").css({
+            "background-color": "#fff",
+            "box-shadow": "0 1px 10px #eee"
+          });   
+          $(".toTop").removeClass("hide");        
+        }
+        $(window).scroll(function () {
+          $("header").css({
+            "background-color": "#fff",
+            "box-shadow": "0 1px 10px #eee"
+          });
+          if ($(window).scrollTop() == 0) {
+            $("header").css({
+              "background-color": "transparent",
+              "box-shadow": "none"
+            });
+            $(".toTop").addClass("hide");
+          }
+          if($(window).scrollTop()>=$("body").height()*0.1){
+            $(".toTop").removeClass("hide");
+          }
+        });
+        $(".toTop").on("click",function(){
+            $("html, body").animate({
+            scrollTop: "0"
+          }, 1000);
+        })
+        // 타이틀 리스트 목차
+        $("#title .block_center").append("<div class='titleList'><ul></ul></div>");
+        var i;
+        for (i = 1; i <= $("#title .block_center > ul li").length; i++) {
+          $(".titleList ul").append("<li></li>");
+        }
+        // 타이틀리스트 첫번째 색상넣기
+        $("#title .block_center .titleList ul li:first-child").addClass("currentList");
+        // 타이틀 애니메이션
+        var slide = 0;
+        var slideList = 1;
+        $("#title .block_center> ul li:nth-child(1)").clone().appendTo("#title .block_center > ul")
+        $("#title .block_center > ul").css("width", "700%");
+
+        function TitleSlide() {
+          $("#title .block_center .titleList ul li:nth-child(" + slideList + ")").addClass("currentList");
+          $("#title .block_center .titleList ul li:nth-child(" + slideList + ")").siblings().removeClass(
+            "currentList");
+          $("#title .block_center > ul").css({
+            "left": -100 * slide + "%",
+            "transition": "1s"
+          })
+          slide++;
+          slideList++;
+          if (slide == $("#title .block_center> ul li").length) {
+            setTimeout(function () {
+              $("#title .block_center>ul").css({
+                "left": "0%",
+                "transition": "0s"
+              });
+            }, 1001);
+            slide = 0;
+          }
+          if (slideList == $("#title .block_center .titleList ul li").length + 2) {
+            $("#title .block_center .titleList ul li:first-child").addClass("currentList");
+            $("#title .block_center .titleList ul li:first-child").siblings().removeClass("currentList");
+            slideList = 1
+          }
+        }
+
+        var titleslide = setInterval(TitleSlide, 3000);
+
+        $("#title .block_center .titleList ul li").on("click", function () {
+          clearInterval(titleslide);
+          slide = $(this).index();
+          slideList = $(this).index() + 1;
+          $("#title .block_center .titleList ul li:nth-child(" + slideList + ")").addClass("currentList");
+          $("#title .block_center .titleList ul li:nth-child(" + slideList + ")").siblings().removeClass(
+            "currentList");
+          $("#title .block_center > ul").css({
+            "left": -100 * slide + "%",
+            "transition": "3s"
+          })
+          titleslide = setInterval(function () {
+            TitleSlide();
+          }, 3000);
+        });
+
+        // 메인메뉴 호버시 font 변경
+        if($(window).outerWidth()>1160){
+          $("header .block_center nav .gnb:not(.open)>ul> li").hover(
+            function(){
+              $(this).addClass("hover");
+          },
+            function(){
+              $(this).removeClass("hover");
+          });
+          $("header .block_center nav .gnb:not(.open) > ul > li ul li a").hover(function(){
+            $(this).addClass("hover");
+          },function(){
+            $(this).removeClass("hover");
+          });
+        }
+        // 메인메뉴 hide붙이기, 클릭시 서브메뉴 화면에 보이기
+        if($(window).outerWidth()<=1160){
+          $("header .block_center nav .gnb").addClass("hide");
+          
+          $("header .block_center .menuBtn").on("click",function(){
+            $("html").css({"overflow":"hidden"});
+            $("header .block_center nav .gnb").addClass("open");
+            $("header .block_center nav .open > ul:not(.cs) > li > a").on("click",function(){
+              $(this).next().addClass("open");
+              $(this).parent().siblings().children("ul").removeClass("open");
+              $(this).css({"color":"#fdd445"});
+              $(this).parent().siblings().children("a").css({"color":"#676d72"});
+            });
+          });
+        }else{
+          $("header .block_center nav .gnb").removeClass("hide");
+          $("header .block_center nav .gnb").removeClass("open");
+        }
+        $(window).resize(function(){
+          if($(window).outerWidth()<=1160){
+            $("header .block_center nav .gnb").addClass("hide");
+            $("header .block_center .menuBtn").on("click",function(){
+              $("html").css({"overflow":"hidden"});
+              $("header .block_center nav .gnb").addClass("open");
+              $("header .block_center nav .open > ul:not(.cs) > li > a").on("click",function(){
+              $(this).next().addClass("open");
+              $(this).parent().siblings().children("ul").removeClass("open");
+              $(this).css({"color":"#fdd445"});
+              $(this).parent().siblings().children("a").css({"color":"#676d72"});
+            });
+            });
+          }else if($(window).outerWidth()>1160){
+            $("html").css({"overflow":"initial"});
+            $("header .block_center nav .gnb").removeClass("hide");
+            $("header .block_center nav .gnb").removeClass("open");
+            $("header .block_center nav .gnb > ul > li ul").removeClass("open");
+            $("header .block_center nav .gnb > ul:not(.cs) > li > a").on("click",function(){
+              $(this).next().removeClass("open");
+            });
+            $("header .block_center nav .gnb>ul> li").hover(
+            function(){
+              console.log("Test");
+              $(this).addClass("hover");
+          },
+            function(){
+              $(this).removeClass("hover");
+          });
+          $("header .block_center nav .gnb > ul > li ul li a").hover(function(){
+            $(this).addClass("hover");
+          },function(){
+            $(this).removeClass("hover");
+          });
+          }
+        //   if($(window).outerWidth()>1160){
+        //   $("header .block_center nav .gnb>ul> li").hover(
+        //     function(){
+        //       console.log("Test");
+        //       $(this).addClass("hover");
+        //   },
+        //     function(){
+        //       $(this).removeClass("hover");
+        //   });
+        //   $("header .block_center nav .gnb > ul > li ul li a").hover(function(){
+        //     $(this).addClass("hover");
+        //   },function(){
+        //     $(this).removeClass("hover");
+        //   });
+        // }
+        });
+        // 메뉴닫기
+        $("header .block_center nav .gnb .close .closeBtn").on("click",function(){
+          $("html").css({"overflow":"initial"});
+          $("header .block_center nav .gnb").removeClass("open");
+        });
+        
+        // footer inform 나타나기
+        var clickCount=1;
+        $("footer .block_center .footer_menu li:nth-of-type(1)").on("click",function(){
+          if(clickCount==1){
+            $(this).addClass("down");
+            $("footer .block_center .footer_inform").removeClass("hide");
+            clickCount=0;
+          }else{
+            $(this).removeClass("down");
+            $("footer .block_center .footer_inform").addClass("hide");
+            clickCount=1;
+          }
+        });
+      });
+  </script>
+  <title>노엘로힐스</title>
+</head>
+
+<body>
+  <!-- ~~~~~~~~~~~~~헤더영역~~~~~~~~~~~~~ -->
+  <header>
+    <div class="block_center">
+      <div class="menuBtn hide"></div>
+      <h1><a href="">noeloHILLS</a></h1>
+      <nav>
+        <div class="gnb">
+          <div class="login hide">
+            <p>로그인이 필요합니다.</p>
+            <a href="">Log in</a>
+          </div>
+          <ul>
+            <li><a href=""><div>Shop</div></a></li>
+            <li>
+              <a href="#"><div>Our Story</div></a>
+              <ul>
+                <li><a href="">Our Beginning</a></li>
+                <li><a href="">Our Story</a></li>
+                <li><a href="">Press</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#"><div>Happdy Formula</div></a>
+              <ul>
+                <li><a href="">Safety & Trust</a></li>
+                <li><a href="">Food Grade Ingredient</a></li>
+                <li><a href="">Pentacera</a></li>
+                <li><a href="">Kind Ingredient List</a></li>
+              </ul>
+            </li>
+            <li><a href=""><div>Healty Care</div></a></li>
+            <li><a href=""><div>Honest Review</div></a></li>
+            <li>
+              <a href="#"><div>Fun Events</div></a>
+              <ul>
+                <li><a href="">Events</a></li>
+                <li><a href="">Benefits</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="cs hide">
+            <li><a href="">CS Center</a></li>
+            <li><a href="">Privacy Policy</a></li>
+            <li><a href="">Terms & condition</a></li>
+          </ul>
+          <div class="close hide"><button class="closeBtn"></button></div>
+        </div>
+        <div class="enb">
+          <a href="">
+            <ion-icon name="cart-outline"></ion-icon>
+          </a>
+          <a href="">
+            <ion-icon name="person-outline"></ion-icon>
+          </a>
+          <a href="">
+            <ion-icon name="log-in-outline"></ion-icon>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- ~~~~~~~~~~~~~타이틀영역~~~~~~~~~~~~~ -->
+  <section id="title">
+    <div class="block_center">
+      <ul>
+        <li class="container">
+          <div>
+            <h2>신제품출시<br>입에 닿아도 안심</h2>
+            <p>#100% 식품 그레이드 #안심로션</p>
+            <div>
+              <a href="" class="more">Show now</a>
+            </div>
+            <img
+              src="https://www.noelohills.com/web/upload/category/editor/2021/06/08/706a96c93b758ef4b9232060c7bdf6f0.png"
+              alt="">
+          </div>
+        </li>
+        <li class="container">
+          <div>
+            <h2>베스트 리뷰맘!<br>후기를 부탁해!</h2>
+            <p>제품리뷰 프로모션</p>
+            <div>
+              <a href="" class="more">Fun Events</a>
+            </div>
+            <img
+              src="https://www.noelohills.com/web/upload/category/editor/2021/05/24/456c647cfececbd1a4a21638d4899559.png"
+              alt="">
+          </div>
+        </li>
+        <li class="container">
+          <div>
+            <h2>Experience<br>New Solution</h2>
+            <p>제품 체험 3차 프로모션</p>
+            <div>
+              <a href="" class="more">Fun Events</a>
+            </div>
+            <img
+              src="https://www.noelohills.com/web/upload/category/editor/2021/06/07/87edfc1be5d2acb9e05d7955640329e2.png"
+              alt="">
+          </div>
+        </li>
+        <li class="container">
+          <div>
+            <h2 class="english">Baby Skincare<br>Perfected<br>by Experts</h2>
+            <p>전문가 지식으로 완성한 유아 스킨케어</p>
+            <div>
+              <a href="" class="more">Show now</a>
+            </div>
+            <img src="https://www.noelohills.com/web/upload/noelo/main/main-banner01.png" alt="">
+          </div>
+        </li>
+        <li class="container">
+          <div>
+            <h2 class="english">A Belief Based on<br> Knowledge, Conscience<br>and Love</h2>
+            <p>지식과 양심, 그리고 사랑에 기반을 둔 신념</p>
+            <div>
+              <a href="" class="more">Our Story</a>
+            </div>
+            <img src="https://www.noelohills.com/web/upload/noelo/main/main-banner02.png" alt="">
+          </div>
+        </li>
+        <li class="container">
+          <div>
+            <p>선 런칭 기념 프로모션</p>
+            <h2 class="english">Don’t Worry<br>Be Happy</h2>
+            <div>
+              <a href="" class="more">Fun Events</a>
+            </div>
+            <img src="https://www.noelohills.com/web/upload/noelo/main/main-banner03.png" alt="">
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <main>
+    <section id="promise">
+      <div class="block_center">
+        <h3>
+          <span>OUR PROMISE</span>
+          <strong class="english">Safety & Trust</strong>
+        </h3>
+        <ul>
+          <li>
+            <h4 class="english">German Dermatest<br>Certified</h4>
+            <p>독일 더마테스트 완료</p>
+          </li>
+          <li>
+            <h4 class="english">Skin Irritation<br>
+              Tested</h4>
+            <p>피부 저자극 테스트 완료</p>
+          </li>
+          <li>
+            <h4 class="english">Eye Irritation<br>Tested</h4>
+            <p>안자극 대체 테스트 완료</p>
+          </li>
+          <li>
+            <h4 class="english">20 Harmful Ingredients<br>Excluded</h4>
+            <p>유해 우려 성분 20가지 배제</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section id="products">
+      <div class="block_center">
+        <h3>
+          <span>OUR PRODUCTS</span>
+          <strong class="english">Meet Our<br>Essentials</strong>
+        </h3>
+        <ul>
+          <li>
+            <a href=""><img src="https://www.noelohills.com/web/product/big/202105/688c3224f322d3dd40916b68b008ba69.jpg"
+                alt="밀크 에센스 로션 150ml"></a>
+            <h4>밀크 에센스 로션 150ml</h4>
+            <p>[NEW] 입에 닿아도 안심 로션</p>
+            <span>45,000원</span>
+            <div><a href="" class="more">See more</a></div>
+          </li>
+          <li>
+            <a href=""><img src="https://www.noelohills.com/web/product/big/202104/8140e2ffe2e71f78e1c4f5e278208097.jpg"
+                alt="모이스처라이징 로션 200ml"></a>
+            <h4>모이스처라이징 로션 200ml</h4>
+            <p>피부에 힘을 길러주는 보습장벽케어</p>
+            <span>38,000원</span>
+            <div><a href="" class="more">See more</a></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section id="information">
+      <div class="block_center">
+        <div class="clearfix">
+          <div>
+            <h3 class="english">A Belief Based on Knowledge,<br>
+              Conscience and Love</h3>
+            <p>내 아이의 피부에 직접 닿는 제품, 안심할 수 있는 성분으로 만들어,<br>
+              공신력 있는 기관의 테스트를 통해 제품의 안전성에 대한 관리를 하고 있습니다.</p>
+            <div><a href="" class="more">Read more</a></div>
+          </div>
+        </div>
+        <div class="clearfix">
+          <div>
+            <h3 class="english">Smart Habits for Healthy<br>
+              Baby Skin</h3>
+            <p>소중하다는 말로도 부족한 우리 아이들에게<br>
+              최선의 피부관리 솔루션을 전해주기 위해<br>
+              Noelo Hills의 진지한 고민은 오늘도 멈추지 않습니다.</p>
+            <div><a href="" class="more">Read more</a></div>
+          </div>
+        </div>
+        <div class="clearfix">
+          <div>
+            <h3 class="english">The Beginning of Noelo Hills</h3>
+            <p>우리가 가장 중요하게 여기는 가치는 진정성입니다.<br>
+              우리가 하는 모든 일, 만드는 모든 제품 그리고 제공하는<br>
+              모든 정보는 과학, 진실 그리고 양심에 기초합니다. </p>
+            <div><a href="" class="more">Read more</a></div>
+          </div>
+        </div>
+        <div class="clearfix">
+          <div>
+            <h3 class="english">Our Promise to Use<br>
+              Only the Best Ingredients</h3>
+            <p>내 아이의 피부에 직접 닿는 제품,<br>
+              아무것이나 사용할 수 없기에 유해 논란이 있는 성분은 최대한<br>
+              배제하고안심할 수 있는 성분으로 만들었습니다.</p>
+            <div><a href="" class="more">Read more</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="block_center">
+      <ul class="footer_menu clearfix english">
+        <li>Noelo Hills</li>
+        <li><a href="">CS Center</a></li>
+        <li><a href="">Privacy Policy</a></li>
+        <li><a href="">Privacy Policy</a></li>
+      </ul>
+      <ul class="footer_inform clearfix hide">
+        <li><span>상호</span>주식회사 세손</li>
+        <li><span>대표자명</span>임정아</li>
+        <li><span>대표전화번호</span>1600-6274</li>
+        <li><span>개인정보관련책임자</span>임지은(help@seisson.com)</li>
+        <li><span>사업장소재지</span>04322 서울특별시 용산구 한강대로 205 (한강로1가) 용산파크자이 디동 205호</li>
+        <li><span>사업자등록번호</span>183-86-01860</li>
+        <li><span>통신판매업 신고번호</span>제2021-서울용산-0634호</li>
+      </ul>
+      <p>© Copyright Seisson Inc. All rights reserved. </p>
+      <span class="footer_instagram"><a href="">Noelo Hills</a></span>
+    </div>
+  </footer>
+  <div class="toTop hide">최상단이동</div>
+  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>
+
+</html>
