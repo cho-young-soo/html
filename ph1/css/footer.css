@@ -1,0 +1,179 @@
+@charset "utf-8";
+footer{
+  width:100%
+}
+footer .company{
+  background-color: #efefef;
+  padding: 20px 0;
+}
+footer .company .company_inform{
+  max-width:1080px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  font-size: 13px;
+  line-height: 250%;
+  overflow: hidden;
+}
+footer .company .company_inform>div{
+  float: left;
+  width: 19%;
+  order:1;
+  
+}
+footer .company .company_inform>div h2{
+  
+}
+footer .company .company_inform>div p{
+  
+}
+footer .company .company_inform > div:nth-of-type(2){
+  display: flex;
+  float: left;
+  width: 70%;
+  order:0;
+}
+footer .company .company_inform > div:nth-of-type(2) .inform-left{
+   margin-right: 35px;
+}
+footer .company .company_inform > div:nth-of-type(2) .inform-left dl{
+  
+}
+/* footer .company .company_inform dl .inform-left{
+  
+  margin-right: 35px;
+} */
+footer .company .company_inform > div:nth-of-type(2) .inform-right{
+  
+}
+footer .company .company_inform > div:nth-of-type(2) div dl dt{
+  position:relative;
+  display: inline-block;
+}
+footer .company .company_inform div:nth-child(2) div dl dt::after{
+  content:":";
+  margin:0 2px;
+  position:absolute;
+}
+footer .company .company_inform div:nth-child(2) div dl dd{
+  
+  display: inline-block;
+  margin-left: 5px;
+}
+footer .company .company_inform div:nth-child(2) div dl dd+dd{
+  margin-left:0;
+  display: block;
+}
+footer .company .company_inform ul{ 
+  float: right;
+  order: 2;
+}
+footer .company .company_inform ul li{ 
+  
+}
+footer .company .company_inform ul li a{ 
+  
+}
+footer .company .company_inform ul li:nth-of-type(1) a{
+  color:red;
+  font-weight: bold;
+}
+footer .list{
+ max-width: 1080px;
+  width:100%;
+  margin:50px auto;
+  display:flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+footer .list div{
+  display:flex;
+}
+footer .list div ul{
+  display:flex;
+  gap:20px;
+}
+footer .list div ul li{
+  
+}
+footer .list div ul li a{
+  display:block;
+  text-indent: -9999px;
+}
+footer .list .list_left{
+  
+}
+footer .list .list_left ul{
+  
+}
+footer .list .list_left ul li {
+
+}
+footer .list .list_left ul li a{
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 27px;
+}
+footer .list .list_left ul li:nth-of-type(1) a{
+  background-image: url(../img/footer/fursys.jpg);
+  width: 67px;
+}
+footer .list .list_left ul li:nth-of-type(2) a{
+  background-image: url(../img/footer/iloom.jpg);
+  width: 52px;
+}
+footer .list .list_left ul li:nth-of-type(3) a{
+  background-image: url(../img/footer/sidiz.jpg);
+  width: 57px;
+}
+footer .list .list_left ul li:nth-of-type(4) a{
+  background-image: url(../img/footer/desker.jpg);
+  width: 75px;
+}
+footer .list .list_left ul li:nth-of-type(5) a{
+  background-image: url(../img/footer/slou.jpg);
+  width: 45px;
+}
+footer .list .list_left ul li:nth-of-type(6) a{
+  background-image: url(../img/footer/alloso.png);
+  width: 56px;
+}
+
+footer .list .list_right{
+  
+}
+footer .list .list_right ul{
+  margin-right:20px
+}
+footer .list .list_right ul li{
+  
+}
+footer .list .list_right ul li a{
+  display:block;
+  width:40px;
+  height:40px;
+}
+footer .list .list_right ul li:nth-of-type(1) a{
+  background-image: url(../img/footer/blog.png);
+}
+footer .list .list_right ul li:nth-of-type(2) a{
+  background-image: url(../img/footer/facebook.png);
+}
+footer .list .list_right ul li:nth-of-type(3) a{
+  background-image: url(../img/footer/youtube.png);
+}
+footer .list .list_right ul li:nth-of-type(4) a{
+  background-image: url(../img/footer/instagram.png);
+}
+footer .list .list_right select{
+  border: 1px solid #999;
+  color: #999;
+  font-size: 12px;
+  padding: 5px 0px 5px 10px;
+  width: 150px;
+  height: 40px;
+}
+footer .list .list_right select option{
+  
+}
