@@ -295,7 +295,7 @@ section {
 #casestudy .w1200 ul li a img {
   margin-bottom: 20px;
   height:330px;
-  width:340px;
+  width:100%;
 }
 
 #casestudy .w1200 ul li a h3 {

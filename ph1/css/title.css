@@ -1,9 +1,11 @@
 #title{
   position:relative;
+  width: 100%;
 }
 #title ul{
   position: relative;
   height: 650px;
+  width:100%;
 }
 #title ul li{
   position: absolute;
