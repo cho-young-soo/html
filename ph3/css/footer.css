@@ -1,0 +1,133 @@
+@charset "utf-8";
+footer{
+
+  padding-top: 8em;
+  background-color: #333;
+  padding-bottom: 8em;
+}
+
+footer .block_center{
+  max-width:1140px;
+}
+footer .block_center>div{
+  display:flex;
+  padding-bottom: 6rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+footer .block_center div div h2{
+  color:#fff;
+  margin-bottom: 1.5rem;
+}
+footer .block_center .left{
+
+  width: 50%;
+}
+footer .block_center .left h2{
+
+}
+footer .block_center .left p{
+
+  line-height: 1.7;
+  color: #737373;
+  padding-right: 36%;
+}
+footer .block_center .middle{
+  
+  width: 20%;
+}
+footer .block_center .middle h2{
+
+}
+footer .block_center .middle ul{
+
+}
+footer .block_center .middle ul li{
+
+}
+footer .block_center .middle ul li a{
+
+  color: #999999;
+  margin-bottom: 10px;
+  display: inline-block;
+  transition:all 0.3s;
+  line-height: 1.7;
+}
+footer .block_center .middle ul li a:hover{
+  color:#fff;
+}
+footer .block_center .right{
+  width: 30%;
+}
+footer .block_center .right div{
+
+}
+footer .block_center .right .right_upper{
+
+}
+footer .block_center .right .right_upper h2{
+
+}
+footer .block_center .right .right_upper form{
+
+}
+footer .block_center .right .right_upper form fieldset{
+
+  margin-bottom: 1.5rem;
+}
+footer .block_center .right .right_upper form fieldset input{
+  padding:10px;
+  height: 43px;
+  border-radius: 30px 0 0 30px;
+  background-color: transparent;
+  border: 1px solid #6c757d;
+  box-sizing: border-box;
+  color:#fff;
+  width: 75%;
+  vertical-align: middle;
+}
+footer .block_center .right .right_upper form fieldset input:focus{
+  outline: none;
+}
+footer .block_center .right .right_upper form fieldset button{
+
+  height: 43px;
+  border: 1px solid #f69314;
+  background-color: #f69314;
+  width: 25%;
+  border-radius: 0 30px 30px 0;
+  vertical-align: middle;
+}
+footer .block_center .right .right_down{
+
+}
+footer .block_center .right .right_down h2{
+
+}
+footer .block_center .right .right_down ul{
+
+  display: flex;
+}
+footer .block_center .right .right_down ul li{
+
+  width: 10%;
+}
+footer .block_center .right .right_down ul li a{
+
+}
+footer .block_center .right .right_down ul li a ion-icon{
+
+  color: #999;
+}
+footer .block_center>p{
+text-align: center;
+padding-top: 3rem;
+color: #737373;
+padding-bottom: 1rem;
+}
+footer .block_center>p span{
+ vertical-align: middle;
+}
+footer .block_center>p a{
+
+  color: #999;
+}
