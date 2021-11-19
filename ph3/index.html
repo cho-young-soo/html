@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css"
+    integrity="sha512-IJEbgDEF7OeKJRa0MY2PApnyJHRIsgzCveek4ec8VWQ+7KG3ZSKVNYa5xP/Gh0hVP0Mwb+gBsk+GwR3JQGhQNg=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/title.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/ham.css">
+  <link rel="stylesheet" href="css/mediaquery.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script>
+    // 화면 스크롤 시 헤더 탑에 고정
+    $(window).scroll(function(){
+      if($(window).scrollTop()==0){
+        $("header").css({"position":"absolute", "background-color":"transparent"});
+      }else{
+        $("header").css({"position":"fixed", "background-color":"#f69314"});
+      }
+
+
+    });
+    // 버튼 클릭시 이미지 스크롤
+    $(window).ready(function(){
+      $("#company .block_center .left ul li:first-child").addClass("active");
+      $("#company .block_center .left span button.next").on("click",function(){
+        var current_list;
+        var next_list;
+
+        var listLength=$("#company .block_center .left ul li").length;
+        $("#company .block_center .left ul li").each(function(){
+          if($(this).hasClass("active")){
+            current_list=$(this).index()+1;
+          }
+        });
+        $("#company .block_center .left ul li").removeClass("active");
+        if(current_list==listLength){
+          current_list=$("#company .block_center .left ul li:first-child").index()+1;
+          $("#company .block_center .left ul li:nth-of-type("+current_list+")").addClass("active");
+        }else{
+          current_list++;
+          $("#company .block_center .left ul li:nth-of-type("+current_list+")").addClass("active");
+        }
+      });
+      $("#company .block_center .left span button.prev").on("click",function(){
+        var current_list;
+        var next_list;
+
+        var listLength=$("#company .block_center .left ul li").length;
+        $("#company .block_center .left ul li").each(function(){
+          if($(this).hasClass("active")){
+            current_list=$(this).index()+1;
+          }
+        });
+        $("#company .block_center .left ul li").removeClass("active");
+        if(current_list==listLength-$("#company .block_center .left ul li:last-child").index()){
+          current_list=$("#company .block_center .left ul li").length;
+          $("#company .block_center .left ul li:nth-of-type("+current_list+")").addClass("active");
+        }else{
+          current_list--;
+          $("#company .block_center .left ul li:nth-of-type("+current_list+")").addClass("active");
+        }
+      });
+
+      // 메뉴 버튼 클릭시 메뉴창
+        $("header .block_center > span").on("click",function(){
+          $("header .block_center .gnb").addClass("mobileMenu");
+          $("header .block_center .gnb").append("<li class='close'></li>")
+          $(".close").on("click",function(){
+            $("header .block_center .gnb").removeClass("mobileMenu");
+          });
+          $(window).resize(function(){
+          if($(window).outerWidth()>=768){
+            $("header .block_center .gnb li.close").remove();
+          }
+          });
+        });
+        // 메뉴 스크롤 애니메이션
+        var homeTop=$("#title").offset().top;
+        var worksTop=$("#works").offset().top;
+        var propertiesTop=$("#properties").offset().top;
+        var companyTop=$("#company").offset().top;
+        var peopleTop=$("#people").offset().top;
+        var newsTop=$("#news").offset().top;
+        var contactTop=$("#contact").offset().top
+        $(window).resize(function(){
+          homeTop=$("#title").offset().top;
+          worksTop=$("#works").offset().top;
+          propertiesTop=$("#properties").offset().top;
+          companyTop=$("#company").offset().top;
+          peopleTop=$("#people").offset().top;
+          newsTop=$("#news").offset().top;
+          contactTop=$("#contact").offset().top
+        });
+      $('.title').click(function () {
+        $('html, body').animate({
+          scrollTop:homeTop
+        }, 1000);
+
+        return false;
+      });
+      $('.works').click(function () {
+        $('html, body').animate({
+          scrollTop:worksTop
+        }, 1000);
+
+        return false;
+      });
+      $('.properties').click(function () {
+        $('html, body').animate({
+          scrollTop:propertiesTop
+        }, 1000);
+
+        return false;
+      });
+      $('.company').click(function () {
+        $('html, body').animate({
+          scrollTop:companyTop
+        }, 1000);
+
+        return false;
+      });
+      $('.about').click(function () {
+        $('html, body').animate({
+          scrollTop:peopleTop
+        }, 1000);
+
+        return false;
+      });
+      $('.news').click(function () {
+        $('html, body').animate({
+          scrollTop:newsTop
+        }, 1000);
+
+        return false;
+      });
+      $('.contact').click(function () {
+        $('html, body').animate({
+          scrollTop:contactTop
+        }, 1000);
+
+        return false;
+      });
+    });
+  </script>
+  <title>STATED</title>
+</head>
+<body>
+  <!-- ~~~~~~~~~~~~~~~~~~~상단영역~~~~~~~~~~~~~~~~~~~ -->
+  <header id="#title">
+    <div class="block_center">
+      <h1><a href="">stated.</a></h1>
+      <ul class="gnb">
+        <li><a href="#" class="title">Home</a></li>
+        <li><a href="#" class="works">Works</a></li>
+        <li><a href="#" class="properties">Properties</a></li>
+        <li><a href="#" class="company">Company</a></li>
+        <li><a href="#" class="about">About</a></li>
+        <li><a href="#" class="news">News</a></li>
+        <li><a href="#" class="contact">Contact</a></li>
+      </ul>
+      <span><span class="ham"></span></span>
+
+    </div>
+  </header>
+  <!-- ~~~~~~~~~~~~~~~~~~~타이틀~~~~~~~~~~~~~~~~~~~ -->
+  <div id="title">
+    <div class="block_center">
+      <h2>Buy and sell real estate properties</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam assumenda ea quo cupiditate facere deleniti
+        fuga officia.</p>
+    </div>
+  </div>
+  <!-- ~~~~~~~~~~~~~~~~~~~컨텐츠~~~~~~~~~~~~~~~~~~~ -->
+  <main>
+    <section id="works">
+      <div class="block_center">
+        <h2>How It Works</h2>
+        <ul>
+          <li>
+            <span class="material-icons">
+              search
+            </span>
+            <h3>Find Property.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </li>
+          <li>
+            <span class="material-icons">
+              paid
+            </span>
+            <h3>Buy Property.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </li>
+          <li>
+            <span class="material-icons">
+              trending_up
+            </span>
+            <h3>Make Investment.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section id="properties">
+      <div class="block_center">
+        <h2>Properties</h2>
+        <ul>
+          <li>
+            <a href=""><img src="img/property_1.jpg" alt="1번집"></a>
+            <div>
+              <strong>$3,400,000</strong>
+              <div>
+                <span>6 beds</span>
+                <span>4 baths</span>
+                <span>4,250 sqft.</span>
+              </div>
+              <p>480 12th, Unit 14, San Francisco, CA</p>
+            </div>
+          </li>
+          <li>
+            <a href=""><img src="img/property_2.jpg" alt="2번집"></a>
+            <div>
+              <strong>$3,400,000</strong>
+              <div>
+                <span>6 beds</span>
+                <span>4 baths</span>
+                <span>4,250 sqft.</span>
+              </div>
+              <p>480 12th, Unit 14, San Francisco, CA</p>
+            </div>
+          </li>
+          <li>
+            <a href=""><img src="img/property_3.jpg" alt="3번집"></a>
+            <div>
+              <strong>$3,400,000</strong>
+              <div>
+                <span>6 beds</span>
+                <span>4 baths</span>
+                <span>4,250 sqft.</span>
+              </div>
+              <p>480 12th, Unit 14, San Francisco, CA</p>
+            </div>
+          </li>
+          <li>
+            <a href=""><img src="img/property_4.jpg" alt="4번집"></a>
+            <div>
+              <strong>$3,400,000</strong>
+              <div>
+                <span>6 beds</span>
+                <span>4 baths</span>
+                <span>4,250 sqft.</span>
+              </div>
+              <p>480 12th, Unit 14, San Francisco, CA</p>
+            </div>
+          </li>
+        </ul>
+        <a href="">View All Property Listings</a>
+      </div>
+    </section>
+    <section id="company">
+      <div class="block_center">
+        <div class="right">
+          <h2>We Are The Best RealEstate Company</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <p>Est qui eos quasi ratione nostrum excepturi id recusandae fugit omnis ullam pariatur itaque nisi voluptas
+            impedit Quo suscipit omnis iste velit maxime.</p>
+          <ul>
+            <li>Placeat maxime animi minus</li>
+            <li>Dolore qui placeat maxime</li>
+            <li>Consectetur adipisicing</li>
+            <li>Lorem ipsum dolor</li>
+            <li>Placeat molestias animi</li>
+          </ul>
+          <a href="">Learn More</a>
+        </div>
+        <div class="left">
+          <ul>
+            <li><img src="img/property_1.jpg" alt="1번집"></li>
+            <li><img src="img/property_2.jpg" alt="2번집"></li>
+            <li><img src="img/property_3.jpg" alt="3번집"></li>
+            <li><img src="img/property_4.jpg" alt="4번집"></li>
+          </ul>
+          <span>
+            <button class="prev">PREV</button>
+            <button class="next">NEXT</button>
+          </span>
+        </div>
+      </div>
+    </section>
+    <section id="people">
+      <div class="block_center">
+        <h2 class="h2">People Says...</h2>
+        <p>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat
+          fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores
+          excepturi earum unde iusto.”</p>
+        <p><img src="img/person_4.jpg" alt="">Robert Spears</p>
+      </div>
+    </section>
+    <section id="news">
+      <div class="block_center">
+        <h2>News & Events</h2>
+        <ul>
+          <li>
+            <a href=""><img src="img/property_1.jpg" alt=""></a>
+            <a href="">20+ Real Properties for Realtors</a>
+            <div>
+              <span>Ham Brook</span>
+              <span>Jan 18, 2019</span>
+              <a href="">News</a>
+            </div>
+          </li>
+          <li>
+            <a href=""><img src="img/property_2.jpg" alt=""></a>
+            <a href="">20+ Real Properties for Realtors</a>
+            <div>
+              <span>James Phelps</span>
+              <span>Jan 18, 2019</span>
+              <a href="">News</a>
+            </div>
+          </li>
+          <li>
+            <a href=""><img src="img/property_3.jpg" alt=""></a>
+            <a href="">20+ Real Properties for Realtors</a>
+            <div>
+              <span>James Phelps</span>
+              <span>Jan 18, 2019</span>
+              <a href="">News</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="block_center">
+        <!-- h2+(form>fieldset>legend+(div*5>label+input)+btn)+(div>(div>h2+p)+(div>h2+a)) -->
+        <h2>Contct Us</h2>
+        <form action="">
+          <fieldset>
+            <legend>Contact Form</legend>
+            <span>
+              <label for="">First Name</label>
+              <input type="text">
+            </span>
+            <span>
+              <label for="">Last Name</label>
+              <input type="text">
+            </span>
+            <label for="">Email</label>
+            <input type="email">
+            <label for="">Subject</label>
+            <input type="text">
+            <label for="">Message</label>
+            <textarea name="name" cols="80" rows="8" placeholder="Write your notes or questions here..."></textarea>
+            <button>Send Message</button>
+          </fieldset>
+        </form>
+        <ul>
+          <li>
+            <h3>Address</h3>
+            <p>203 Fake St. Mountain View, San Francisco, California, USA</p>
+          </li>
+          <li>
+            <h3>Phone</h3>
+            <a>+1 232 3235 324</a>
+          </li>
+          <li>
+            <h3>Email Address</h3>
+            <a>youremail@domain.com</a>
+          </li>
+        </ul>
+    </section>
+  </main>
+  <!-- ~~~~~~~~~~~~~~~~~~~하단영역~~~~~~~~~~~~~~~~~~~ -->
+  <footer>
+    <div class="block_center">
+      <div>
+        <!-- (div>h2+p)+(div>h2+ul>li*4>a)+(div>h2+(form>fieldset>input+btn)+(div>h2+ul>li*4>a))+p -->
+        <div class="left">
+          <h2>About Stated</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere laudantium magnam voluptatum autem.
+            Amet aliquid nesciunt veritatis aliquam.</p>
+        </div>
+        <div class="middle">
+          <h2>Quick Links</h2>
+          <ul>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Testimonials</a></li>
+            <li><a href="">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="right">
+          <div class="right_upper">
+            <h2>Subscribe Newsletter</h2>
+            <form action="">
+              <fieldset>
+                <input type="text" placeholder="Enter Email"><button>Send</button>
+              </fieldset>
+            </form>
+          </div>
+          <div class="right_down">
+            <h2>Follow Us</h2>
+            <ul>
+              <li><a href="">
+                  <ion-icon name="logo-facebook"></ion-icon><span class="hide">페이스북</span>
+                </a></li>
+              <li><a href="">
+                  <ion-icon name="logo-twitter"></ion-icon><span class="hide">트위터</span>
+                </a></li>
+              <li><a href="">
+                  <ion-icon name="logo-instagram"></ion-icon><span class="hide">인스타그램</span>
+                </a></li>
+              <li><a href="">
+                  <ion-icon name="logo-linkedin"></ion-icon><span class="hide">링크드인</span>
+                </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p>Copyright ©2021 All rights reserved | This template is made with<span class="material-icons">favorite</span>by
+        <a href="">Colorlib</a></p>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>
+
+</html>
