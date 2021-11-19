@@ -1,0 +1,202 @@
+#Jmain{
+
+}
+#Jmain .maininner{
+
+}
+#Jmain .maininner h2{
+  margin-bottom:0;
+} 
+#Jmain .maininner form{
+  margin-bottom: 25px;
+}
+#Jmain .maininner form fieldset{
+  text-align: right;
+  margin-top: -30px;
+}
+#Jmain .maininner form fieldset legend{
+
+}
+#Jmain .maininner form fieldset>div{
+  width: 260px;
+  height: 45px;
+  position: relative;
+  display: inline-block;
+}
+#Jmain .maininner form fieldset>div input{
+  width:100%;
+  height:100%;
+  padding-left: 16px;
+  padding-right:50px;
+  box-sizing: border-box;
+  border:1px solid #e0e0e0;
+  outline: none;
+  font-size: 18px;
+}
+#Jmain .maininner form fieldset>div div{
+  content:"";
+  position:absolute;
+  display:block;
+  right:0;
+  top:0;
+  width:50px;
+  height:45px;
+  background-image:url("../img/icon-search.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#Jmain .maininner form fieldset>div input::placeholder{
+  color:#666;
+  font-size:16px;
+}
+#Jmain .maininner table{
+  width: 100%;
+  border-top: 1px solid #000;
+  margin-bottom: 45px;
+}
+#Jmain .maininner table tbody{
+  
+}
+#Jmain .maininner table tbody tr{
+  border-bottom: 1px solid #e5e5e5;
+}
+#Jmain .maininner table tbody tr td{
+  box-sizing: border-box;
+  padding:20px;
+  height:126px;
+  vertical-align: middle;
+}
+#Jmain .maininner table tbody tr td:nth-of-type(1){
+  width:240px;
+  font-size: 22px;
+  font-weight: 700;
+}
+#Jmain .maininner table tbody tr td:nth-of-type(2){
+  width:auto;
+}
+#Jmain .maininner table tbody tr td:nth-of-type(3){
+  width:220px;
+  color: #666;
+  padding-left: 0;
+}
+#Jmain .maininner table tbody tr td a{
+  font-size: 20px;
+  position:relative;
+  line-height:1
+}
+#Jmain .maininner table tbody tr td a::after{
+  content:"";
+  position:absolute;
+  display:block;
+  width:0%;
+  height: 1px;
+  background-color:#000;
+  bottom:-3px;
+  left:0;
+  transition:0.5s all;
+}
+#Jmain .maininner table tbody tr td a:hover::after{
+  width:100%
+}
+#Jmain .maininner > div{
+  text-align: center;
+}
+#Jmain .maininner > div ul{
+  display:inline-flex;
+}
+#Jmain .maininner > div ul li{
+  margin: 0 3px;
+}
+#Jmain .maininner > div ul li:nth-of-type(3){
+  margin-left:10px;
+}
+#Jmain .maininner > div ul li:nth-of-type(12){
+  margin-right:10px;
+}
+#Jmain .maininner > div ul li a{
+  display:inline-block;
+  width: 35px;
+  height: 35px;
+  border:1px solid #dcdcdc;
+  line-height: 35px;
+  color:#666;
+  box-sizing: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#Jmain .maininner > div ul li a:hover{
+  border-color:#aaa
+}
+#Jmain .maininner > div ul li:nth-of-type(1) a,
+#Jmain .maininner > div ul li:nth-of-type(14) a{
+  background-image: url("../img/icon-prev2.png")
+}
+#Jmain .maininner > div ul li:nth-of-type(2) a,
+#Jmain .maininner > div ul li:nth-of-type(13) a{
+  background-image: url("../img/icon-prev.png")
+}
+#Jmain .maininner > div ul li:nth-of-type(13) a,
+#Jmain .maininner > div ul li:nth-of-type(14) a{
+  transform: rotate(180deg);
+}
+#Jmain .maininner .question{
+  text-align: left;
+  margin-top: 100px;
+}
+#Jmain .maininner .question h2{
+width:100%;
+position:relative;
+padding-left:28px;
+height:50px;
+font-size: 22px;
+font-weight: 700;
+box-sizing: border-box;
+border-bottom:1px solid #000;
+}
+#Jmain .maininner .question h2::before{
+  content:"";
+  position:absolute;
+  background-image: url("../img/icon_question_mark.png");
+  left: 0;
+  top: 0;
+  width: 23px;
+  height: 23px;
+}
+#Jmain .maininner .question dl{
+
+  margin-bottom: 20px;
+}
+#Jmain .maininner .question dl dt{
+  height: 100px;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  align-items: center;
+  font-size:20px;
+  padding-left:27px;
+  position:relative;
+}
+#Jmain .maininner .question dl dt::after{
+  content:"";
+  display:block;
+  position:absolute;
+  width:20px;
+  height:20px;
+  border-left:1px solid #c1c1c1;
+  border-top:1px solid #c1c1c1;
+  right:5%;
+  transform-origin: center;
+  transform: rotate(-135deg);
+}
+#Jmain .maininner .question dl dd{
+  box-sizing: border-box;
+  padding: 36px 56px;
+  background-color: #fafafa;
+  border-bottom: 1px solid #e5e5e5;
+  display: none;
+}
+#Jmain .maininner .question p{
+
+}
+#Jmain .maininner .question p strong{
+ color:#14f078
+}

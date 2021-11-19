@@ -1,0 +1,14 @@
+@charset "UTF-8";
+#title{
+  background-color:#ed008c;
+}
+
+#title .titleinner{
+
+}
+#title .titleinner::after{
+  background-image: url("../img/bg_icon_game2.png");
+}
+#title .titleinner p{
+
+}

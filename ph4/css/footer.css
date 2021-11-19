@@ -1,0 +1,77 @@
+@charset "UTF-8";
+footer{
+  background-color: #f7f5f5;
+  padding: 50px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .companyInform{
+  line-height: 2;
+  color: #777;
+}
+footer .companyInform ul{
+  display:flex;
+}
+footer .companyInform ul li{
+  
+}
+footer .companyInform ul li:first-child{
+  padding-right:10px;
+}
+footer .companyInform ul li:not(:first-child){
+  padding: 0 10px;
+  position: relative;
+}
+footer .companyInform ul li:not(:first-child)::before{
+  content:"";
+  display:block;
+  width:1px;
+  height:15px;
+  position: absolute;
+  background-color:#777;
+  left:0;
+  top:50%;
+  transform: translateY(-50%);
+}
+footer .companyInform ul li a{
+  color: inherit;
+  font-size: 15px;
+}
+footer .companyInform .companyAddress{
+  display:flex;
+  font-size: 14px;
+}
+footer .companyInform .companyAddress address{
+  
+}
+footer .companyInform .companyAddress .tel{
+  display:flex;
+  margin-left: 10px;
+}
+footer .companyInform .companyAddress .tel dt{
+  
+}
+footer .companyInform .companyAddress .tel dd{
+  margin: 0 10px;
+}
+footer .companyInform .copyright{
+  font-size: 14px;
+}
+footer .reddot{
+
+}
+
+footer .reddot img{
+  cursor: pointer;
+}
+
+/* 컨텐츠에서의 reddot 위치 */
+footer .content{
+  position:relative;
+}
+.content .reddot{
+  position:absolute;
+  top:0;
+  right:0;
+}

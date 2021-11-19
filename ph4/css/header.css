@@ -1,0 +1,140 @@
+@charset "UTF-8";
+header{
+  width: 100%;
+  height: 72px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #fff;
+}
+header .container{
+  display: flex;
+  padding: 0 60px;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+header .container .logo{
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+header .container .logo a{
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  width: 116px;
+}
+header .container .logo a span{
+  
+}
+header .container .logo a img{
+  width: 116px;
+  height: 100%;
+}
+header .container .gnb{
+  width:100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+header .container .gnb .menu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:100%;
+  min-width:700px;
+  margin:0 110px;
+}
+header .container .gnb .menu>li{
+  height: 100%;
+}
+header .container .gnb .menu>li .menuTitle{
+  height:100%;
+  padding: 0 25px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 18px;
+}
+header .container .gnb .menu>li .menuTitle::after{
+  content:"";
+  display:none;
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #14f078;
+}
+header .container .gnb .menu>li:hover .menuTitle::after{
+  display:block;
+}
+header .container .gnb .menu>li .menuTitle.choice::after{
+  display:block;
+}
+header .container .gnb .menu>li div{
+    position: absolute;
+  width:100%;
+  left: 0;
+  top: 72px;
+  height: 72px;
+  z-index: 0;
+}
+header .container .gnb .menu>li:hover div{
+  display:block;
+  z-index:1;
+}
+header .container .gnb .menu>li div ul{
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color:#fff;
+  z-index: 0;
+}
+header .container .gnb .menu>li div ul::before{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:2px;
+  display:block;
+  background-color:#14f078;
+  top:0;
+  left:0;
+}
+
+header .container .gnb .menu>li div ul li{
+  height: 100%;
+  position: relative;
+}
+header .container .gnb .menu>li div ul li:not(:first-child)::before{
+  content:"";
+  display:block;
+  position:absolute;
+  height: 30px;
+  width:1px;
+  background-color:#ccc;
+  top:50%;
+  transform: translateY(-50%);
+}
+header .container .gnb .menu>li div ul li .subMenu{
+  height: 100%;
+  display:flex;
+  align-items: center;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  font-size: 22px;
+  color: #888;
+  transition: all 1s;
+  position:relative;
+}
+header .container .gnb .menu>li div ul li .subMenu:hover{
+  color:#000;
+}

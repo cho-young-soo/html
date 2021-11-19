@@ -1,0 +1,121 @@
+#Rmain{
+
+}
+#Rmain .maininner{
+
+}
+#Rmain .maininner .talent{
+
+  margin-bottom: 70px;
+  border-bottom: 1px solid #e5e5e5;
+}
+#Rmain .maininner .talent h2{
+  margin-bottom:0;
+}
+#Rmain .maininner .talent div{
+  text-align: center;
+  margin-bottom: 40px;
+}
+#Rmain .maininner .talent div img{
+
+}
+#Rmain .maininner .talent ul{
+
+}
+#Rmain .maininner .talent ul li{
+  margin-bottom:55px;
+}
+#Rmain .maininner .talent ul li:nth-of-type(3){
+  margin-bottom:70px;
+}
+#Rmain .maininner .talent ul li h3{
+  margin:0;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+#Rmain .maininner .talent ul li h3::before{
+  width:30px;
+  display:block;
+  top:-20px;
+}
+#Rmain .maininner .talent ul li p{
+
+}
+#Rmain .maininner .talent ul li p+p{
+
+}
+#Rmain .maininner .welfare{
+  
+}
+#Rmain .maininner .welfare h2{
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+#Rmain .maininner .welfare ul{
+
+}
+#Rmain .maininner .welfare ul li{
+  width:560px;
+  padding:0;
+  padding-left: 100px;
+}
+#Rmain .maininner .welfare ul li::before{
+  top:50%;
+  width:47px;
+  height:47px;
+  background-image:url("../img/icon-welfare.png");
+  left: 3%;
+  transform: translateY(-50%);
+}
+#Rmain .maininner .welfare ul li:nth-of-type(2)::before{
+  background-position-y: -100px;
+  width: 37px;
+  height: 70px;
+}
+#Rmain .maininner .welfare ul li:nth-of-type(3)::before{
+  background-position-y: -200px;
+  width: 52px;
+  height: 35px;
+}
+#Rmain .maininner .welfare ul li:nth-of-type(4)::before{
+  background-position-y: -300px;
+  width: 41px;
+  height: 52px;
+}
+#Rmain .maininner .welfare ul li:nth-of-type(5)::before{
+  background-position-y: -400px;
+  width: 52px;
+  height: 32px;
+}
+#Rmain .maininner .welfare ul li:nth-of-type(6)::before{
+  background-position-y: -500px;
+  width: 48px;
+  height: 40px;
+}
+#Rmain .maininner .welfare ul li:nth-of-type(7)::before{
+  background-position-y: -600px;
+  width: 48px;
+  height: 49px;
+}
+#Rmain .maininner .welfare ul li:nth-of-type(8)::before{
+  background-position-y: -700px;
+  width: 48px;
+  height: 48px;
+}
+#Rmain .maininner .welfare ul li:nth-of-type(9)::before{
+  background-position-y: -800px;
+  width: 55px;
+  height: 39px;
+}
+#Rmain .maininner .welfare ul li:nth-of-type(10)::before{
+  background-position-y: -900px;
+  width: 47px;
+  height: 45px;
+}
+
+#Rmain .maininner .welfare ul li h3{
+
+}
+#Rmain .maininner .welfare ul li p{
+
+}

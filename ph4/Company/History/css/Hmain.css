@@ -1,0 +1,85 @@
+@charset "UTF-8";
+#Hmain{
+  padding-top:227px;
+}
+#Hmain .maininner{
+
+}
+#Hmain .maininner>ul{
+  position: relative;
+  text-align: right;
+}
+#Hmain .maininner>ul::before{
+  content:"";
+  position:absolute;
+  width:1px;
+  height:calc(100% - 15px);
+  background-color:#e5e5e5;
+  left:50%;
+  top:15px;
+  transform: translateX(-50%);
+}
+#Hmain .maininner>ul::after{
+  content:"";
+  display:block;
+  clear: both;
+}
+#Hmain .maininner>ul>li{
+  width: calc(50% + 1px);
+  padding-right: 33px;
+  box-sizing: border-box;
+  float: left;
+  position: relative;
+}
+#Hmain .maininner>ul>li:not(:nth-of-type(1)){
+  margin-top:40px;
+}
+#Hmain .maininner>ul>li:nth-of-type(2n){
+  text-align: left;
+  float: right;
+  padding-right: 0;
+  padding-left: 33px;
+ 
+}
+#Hmain .maininner>ul>li h2{
+  font-size: 35px;
+}
+#Hmain .maininner>ul>li h2::before{
+  content:"";
+  position:absolute;
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background-color:#14f078;
+  right:-4px;
+  top:16px;
+}
+#Hmain .maininner>ul>li:nth-of-type(2n) h2::before{
+  right:initial;
+  left:-3px;
+}
+
+#Hmain .maininner>ul>li ul{
+  
+}
+#Hmain .maininner>ul>li ul li{
+  position:relative;
+  margin-top: 10px;
+  padding-right: 50px;
+  width: 100%;
+  box-sizing: border-box;
+  color:#666;
+}
+#Hmain .maininner>ul>li:nth-of-type(2n) ul li{
+  padding-right:0;
+  padding-left:50px;
+}
+#Hmain .maininner>ul>li ul li span{
+  position:absolute;
+  right:0;
+  top: 0;
+  color: #000;
+}
+#Hmain .maininner>ul>li:nth-of-type(2n) ul li span{
+  left:0;
+}

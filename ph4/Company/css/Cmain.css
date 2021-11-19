@@ -1,0 +1,158 @@
+#Cmain{
+margin-bottom:120px;
+}
+/* 공통 */
+em{
+  font-weight: bold;
+}
+/* 개별 */
+#Cmain .maininner{
+  
+}
+#Cmain .maininner>div:not(.business){
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 60px;
+}
+#Cmain .maininner>div:not(.vision){
+  padding-top:60px;
+}
+#Cmain .maininner div h2{
+
+}
+#Cmain .maininner div h2 span{
+  color: #999;
+}
+#Cmain .maininner div>p{
+
+}
+/* vision */
+#Cmain .maininner .vision{
+  
+}
+#Cmain .maininner .vision h2{
+  
+}
+#Cmain .maininner .vision h2 span{
+  
+}
+#Cmain .maininner .vision h2 p{
+  
+}
+/* worth */
+#Cmain .maininner .worth{
+  
+}
+#Cmain .maininner .worth h2{
+  
+}
+#Cmain .maininner .worth h2::after{
+  content:"e";
+  font-size:32px;
+  margin-left:5px;
+  color:#14f078;
+  display: inline-block;
+  line-height: .5;
+  vertical-align: top;
+}
+#Cmain .maininner .worth p{
+  
+}
+#Cmain .maininner .worth p em{
+  
+}
+#Cmain .maininner .worth div:nth-of-type(1){
+  margin-top:40px;
+  width:100%;
+}
+#Cmain .maininner .worth div:nth-of-type(1) img{
+  width:  100%;
+}
+#Cmain .maininner .worth .subWorth{
+
+}
+#Cmain .maininner .worth .subWorth h3{
+
+}
+#Cmain .maininner .worth .subWorth h3::before{
+  
+}
+#Cmain .maininner .worth .subWorth h3:not(:nth-of-type(1))::before{
+  top:-15px;
+}
+#Cmain .maininner .worth .subWorth h3 em{
+  color: #14f078;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 22px;
+  /*! vertical-align: bottom; */
+}
+#Cmain .maininner .worth .subWorth h3 span{
+  margin-left: 3px;
+  font-weight: 400;
+  color: #999;
+}
+#Cmain .maininner .worth .subWorth p{
+  
+}
+#Cmain .maininner .worth .subWorth dl{
+  padding-left: 18px;
+}
+#Cmain .maininner .worth .subWorth dl dt{
+  margin-top: 10px;
+  font-size: 17px;
+  color: #333;
+  font-weight: 500;
+  line-height: 1.5;
+  position:relative;
+}
+#Cmain .maininner .worth .subWorth dl dt::before{
+  content:"";
+  position:absolute;
+  display:inline-block;
+  width:5px;
+  height:5px;
+  background-color:#999;
+  border-radius: 50%;
+  left:-12px;
+  top:12px;
+}
+#Cmain .maininner .worth .subWorth dl dd{
+
+}
+/* business */
+#Cmain .maininner .business{
+  
+}
+#Cmain .maininner .business h2{
+  
+}
+#Cmain .maininner .business ul{
+  display:flex;
+  flex-wrap: wrap;
+}
+#Cmain .maininner .business ul li{
+
+}
+#Cmain .maininner .business ul li::before{
+  width:129px;
+  height:129px;
+  background-image:url(../img/sp_biz_category.png);
+}
+#Cmain .maininner .business ul li:nth-of-type(2)::before{
+  background-position-y: -200px
+}
+#Cmain .maininner .business ul li:nth-of-type(3)::before{
+  background-position-y: -400px
+}
+#Cmain .maininner .business ul li:nth-of-type(4)::before{
+  background-position-y: -600px
+}
+#Cmain .maininner .business ul li:nth-of-type(5)::before{
+  background-position-y: -800px
+}
+#Cmain .maininner .business ul li h3{
+
+}
+#Cmain .maininner .business ul li p{
+
+}

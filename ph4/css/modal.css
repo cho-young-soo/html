@@ -1,0 +1,70 @@
+@charset "UTF-8";
+.modalHide{
+  display:none;
+}
+.reddotModal{
+  position:fixed;
+  inset:0;
+  background-color:rgba(0,0,0,0.5);
+  z-index:10;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.reddotModal .reddotinner{
+  display: flex;
+  width: 1016px;
+  box-sizing: border-box;
+  background-color: #fff;
+  position: relative;
+}
+.reddotModal .reddotinner .redotLeft{
+  
+  padding-top: 65px;
+  padding-left: 50px;
+}
+.reddotModal .reddotinner .redotLeft img{
+  
+}
+.reddotModal .reddotinner .reddotRight{
+  padding: 65px 50px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.reddotModal .reddotinner .reddotRight h2{
+  font-size: 33px;
+  margin-bottom: 20px;
+  color: #333;
+}
+.reddotModal .reddotinner .reddotRight p{
+  font-size: 26px;
+  color: #333;
+  margin-bottom: 50px;
+}
+.reddotModal .reddotinner .reddotRight h3{
+  font-size: 18px;
+  border-bottom:2px solid #000;
+  padding-bottom:20px;
+}
+.reddotModal .reddotinner .reddotRight .list{
+  display: flex;
+  flex-wrap: wrap;
+}
+.reddotModal .reddotinner .reddotRight .list dl{
+  min-width:33%;
+  margin-top: 35px;
+  flex: 1;
+}
+.reddotModal .reddotinner .reddotRight .list dt{
+  
+  margin-bottom: 5px;
+  color: #888;
+  font-size: 15px;
+}
+.reddotModal .reddotinner .reddotRight .list dd{
+
+  font-size: 18px;
+}
+.reddotModal .reddotinner .close{
+  
+}

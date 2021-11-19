@@ -1,0 +1,15 @@
+@charset "UTF-8";
+#title{
+  background-color:#fdd601;
+}
+
+#title .titleinner{
+
+}
+#title .titleinner::after{
+  background-image: url("../img/bg_icon_publicity2.png");
+}
+
+#title .titleinner p{
+
+}

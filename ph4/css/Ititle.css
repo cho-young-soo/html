@@ -1,0 +1,31 @@
+@charset "UTF-8";
+#ititle{
+  height: calc(100vw / 2.42);
+  min-height: 600px;
+  max-height: 810px;
+  padding-top: 70px;
+  box-sizing: border-box;
+  position:relative;
+}
+#ititle .titleimg{
+  background-image: url(../img/bg_main_wemix.jpg);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#ititle .titleimg .wrapButton{
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#ititle .titleimg .wrapButton a{
+  display: inline-block;
+  width:212px;
+  height:60px;
+  background-color:#000;
+  color:#fff;
+  border-radius: 50px;
+  text-align: center;
+  line-height: 60px;
+}

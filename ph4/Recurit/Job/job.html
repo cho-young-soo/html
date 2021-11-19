@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEMADE</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/header.css">
+  <link rel="stylesheet" href="css/Jheader.css">
+  <link rel="stylesheet" href="css/Jtitle.css">
+  <link rel="stylesheet" href="css/Jmain.css">
+  <link rel="stylesheet" href="../../css/footer.css">
+  <link rel="stylesheet" href="../../css/modal.css">
+  <link rel="stylesheet" href="../../css/response.css">
+  <link rel="stylesheet" href="../../css/font.css">
+
+  <script src="../../js/jquery-3.6.0.min.js"></script>
+  <script>
+    $(window).ready(function () {
+      $("#Jmain .maininner .question dl dt").on("click",function(){
+        $(this).addClass("up");
+        $(this).siblings().removeClass("up")
+        $(this).next().addClass("open");
+        $(this).siblings().not($(this).next()).removeClass("open")
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <!-- 메인메뉴바 -->
+  <header>
+    <div class="container content">
+      <h1 class="logo">
+        <a href="../../index.html">
+          <span class="sr-only">WEMADE</span>
+          <img src="../../img/Logotype_02_black_transparency.png" alt="WEMADE">
+        </a>
+      </h1>
+      <nav class="gnb">
+        <ul class="menu">
+          <li>
+            <a href="../../Company/company.html" class="menuTitle">회사소개</a>
+            <div class="hide">
+              <ul>
+                <li><a href="../../Company/company.html" class="subMenu">위메이드</a></li>
+                <li><a href="../../Company/History/history.html" class="subMenu">연혁</a></li>
+                <li><a href="../../Company/Partner/partner.html" class="subMenu">관계사</a></li>
+                <li><a href="../../Company/Typeface/typeface.html" class="subMenu">CI/기업전용 서체</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="../../Game/game.html" class="menuTitle">게임</a>
+            <div class="hide">
+              <ul>
+                <li><a href="../../Game/game.html" class="subMenu">게임소개</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="../../Promotion/promotion.html" class="menuTitle">홍보</a>
+            <div class="hide">
+              <ul>
+                <li><a href="../../Promotion/promotion.html" class="subMenu">보도자료</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="../recruit.html" class="menuTitle choice">인재채용</a>
+            <div class="hide">
+              <ul>
+                <li><a href="../recruit.html" class="subMenu">기업문화</a></li>
+                <li><a href="job.html" class="subMenu">채용공고</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- 타이틀 -->
+  <div id="title">
+    <div class="titleinner">
+      <p>위메이드에서 무한한 상상을<br>
+        현실로 만들어 보세요.
+      </p>
+    </div>
+  </div>
+  <!-- main -->
+  <section id="Jmain">
+    <div class="maininner">
+      <h2 class="contentTit">채용중인 공고</h2>
+      <form action="#">
+        <fieldset>
+          <legend class="sr-only">검색</legend>
+          <div>
+            <input type="text" placeholder="검색어를 입력하세요">
+            <div></div>
+          </div>
+        </fieldset>
+      </form>
+      <table>
+        <tbody>
+          <tr>
+            <td>위메이드</td>
+            <td><a href="">회계 팀장 채용 공고</a></td>
+            <td>2021-10-21 ~ 2021-10-31</td>
+          </tr>
+          <tr>
+            <td>전기아이피</td>
+            <td><a href="">QA 채용 공고 </a></td>
+            <td>2021-10-21 ~ 2021-10-31</td>
+          </tr>
+          <tr>
+            <td>위메이드XR</td>
+            <td><a href="">엔진 프로그래머 채용 공고</a></td>
+            <td>2021-10-01 ~ 2021-10-31</td>
+          </tr>
+          <tr>
+            <td>전기아이피</td>
+            <td><a href="">해외사업 영어권 PM 채용 공고</a></td>
+            <td>2021-09-28 ~ 2021-10-31</td>
+          </tr>
+          <tr>
+            <td>위메이드플러스</td>
+            <td><a href="">블록체인 모바일 게임 AD 채용 공고</a></td>
+            <td>2021-09-28 ~ 2021-10-31</td>
+          </tr>
+          <tr>
+            <td>위메이드플러스</td>
+            <td><a href="">블록체인 모바일 게임 모델러 채용 공고</a></td>
+            <td>2021-09-28 ~ 2021-10-31</td>
+          </tr>
+          <tr>
+            <td>위메이드플러스</td>
+            <td><a href="">블록체인 모바일 게임 원화가 채용 공고</a></td>
+            <td>2021-09-28 ~ 2021-10-31</td>
+          </tr>
+          <tr>
+            <td>기술PM 채용 공고</td>
+            <td><a href="">기술PM 채용 공고</a></td>
+            <td>2021-09-28 ~ 2021-10-31</td>
+          </tr>
+          <tr>
+            <td>위메이드</td>
+            <td><a href="">웹 UI 개발 채용 공고</a></td>
+            <td>2021-09-28 ~ 2021-10-31</td>
+          </tr>
+          <tr>
+            <td>위메이드</td>
+            <td><a href="">프론트엔드 개발 채용 공고</a></td>
+            <td>2021-09-28 ~ 2021-10-31</td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        <ul>
+          <li><a href=""></a></li>
+          <li><a href=""></a></li>
+          <li><a href="">1</a></li>
+          <li><a href="">2</a></li>
+          <li><a href="">3</a></li>
+          <li><a href="">4</a></li>
+          <li><a href="">5</a></li>
+          <li><a href="">6</a></li>
+          <li><a href="">7</a></li>
+          <li><a href="">8</a></li>
+          <li><a href="">9</a></li>
+          <li><a href="">10</a></li>
+          <li><a href=""></a></li>
+          <li><a href=""></a></li>
+        </ul>
+      </div>
+      <div class="question">
+        <h2 class="contentTit">자주 묻는 질문</h2>
+        <dl>
+          <dt>Q. 면접시 복장은 어떻게 하나요?</dt>
+          <dd class="desc">단정한 자유복장으로 오시면 됩니다.</dd>
+          <dt>Q. 불합격 사유를 알 수 있나요?</dt>
+          <dd class="desc">인재영입은 수많은 지원자들을 심사하여 해당 포지션에 가장 적합하고 우수한 인재를 선발하는 과정입니다.<br>          
+          따라서 채용 결과는 상대적인 평가와 비교를 통하여 복합적으로 판단되는 경우가 많아 구체적인 특정 사유를 말씀 드리기가 참 어렵습니다.<br>         
+          한 분, 한 분, 구체적인 불합격 사유를 말씀 드리지 못하는 점 양해 부탁드립니다.
+          </dd>
+          <dt>Q. 면접시 구비해야 할 서류가 있나요?</dt>
+          <dd class="desc">면접시 준비해야 할 서류는 없습니다.<br>
+          필요시 개별적으로 안내드리고 있습니다.</dd>
+          <dt>Q. 재입사가 가능한가요?</dt>
+          <dd class="desc">네, 가능합니다.<br>
+          다만, 타지원자와 같은 전형으로 면접을 치르셔야 합니다.
+          </dd>
+          <dt>Q. 면접결과는 언제 알려주나요?</dt>
+          <dd class="desc">진행은 7일에서 15일이 소요됩니다.<br>
+          결과는 유선 또는 메일로 안내드릴 예정이오니 참고 부탁드리겠습니다.
+          </dd>
+          <dt>Q. 현재 외국 체류 중에 있습니다. 꼭 귀국해서 인터뷰를 진행해야 할까요?</dt>
+          <dd class="desc">현업 의견에 따라 1차 인터뷰는 화상 인터뷰로 진행이 가능하나, 2차 인터뷰 오프라인 진행이 원칙입니다.</dd>
+        </dl>
+        <p>※ 찾으시는 답변이 없다면 <strong>recruit@wemade.com</strong>으로 문의 주시기 바랍니다. </p>
+      </div>
+    </div>
+  </section>
+  <!-- footer -->
+  <footer>
+    <div class="companyInform content">
+      <ul>
+        <li><a href="">기업윤리</a></li>
+        <li><a href="">개인정보 처리방침</a></li>
+        <li><a href="">오시는 길</a></li>
+      </ul>
+      <div class="companyAddress">
+        <address>경기도 성남시 분당구 대왕판교로 644번길 49 위메이드타워</address>
+        <dl class="tel">
+          <dt>대표전화</dt>
+          <dd>02.3709.2000</dd>
+          <dt>FAX</dt>
+          <dd>02.3709.2100</dd>
+        </dl>
+      </div>
+      <p class="copyright">ⓒ Wemade Co., Ltd. All rights reserved.</p>
+      <div class="reddot">
+        <img src="../../img/bg_reddot_footer.png" alt="레드닷">
+      </div>
+    </div>
+  </footer>
+  <div class="modalHide">
+    <div class="reddotModal">
+      <div class="reddotinner">
+        <div class="redotLeft">
+          <img src="../../img/bg_reddot_2019.png" alt="">
+        </div>
+        <div class="reddotRight">
+          <h2>WEMADE</h2>
+          <p>기업 아이덴티티 브랜드&커뮤니케이션<br>
+            본상 수상</p>
+          <h3>크레딧</h3>
+          <div class="list">
+            <dl>
+              <dt>클라이언트</dt>
+              <dd>위메이드</dd>
+            </dl>
+            <dl>
+              <dt>디자인</dt>
+              <dd>윤디자인그룹</dd>
+            </dl>
+            <dl>
+              <dt>크리에이티브 총괄</dt>
+              <dd>송모헌</dd>
+            </dl>
+            <dl>
+              <dt>디자인 총괄</dt>
+              <dd>김성훈</dd>
+            </dl>
+            <dl>
+              <dt>프로젝트 매니저</dt>
+              <dd>황재환</dd>
+            </dl>
+            <dl>
+              <dt>그래픽 디자인</dt>
+              <dd>최치영, 이영빈</dd>
+            </dl>
+            <dl>
+              <dt>글꼴 디자인</dt>
+              <dd>정유권 정송원</dd>
+            </dl>
+          </div>
+        </div>
+        <div class="closeBtn"></div>
+      </div>
+    </div>
+  </div>
+  <script src="../../js/reddot.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+#Pmain{
+
+}
+#Pmain .maininner{
+
+}
+#Pmain .maininner form{
+  margin-bottom: 25px;
+}
+#Pmain .maininner form fieldset{
+  text-align: right;
+}
+#Pmain .maininner form fieldset legend{
+
+}
+#Pmain .maininner form fieldset>div{
+  width: 260px;
+  height: 45px;
+  position: relative;
+  display: inline-block;
+}
+#Pmain .maininner form fieldset>div input{
+  width:100%;
+  height:100%;
+  padding-left: 16px;
+  padding-right:50px;
+  box-sizing: border-box;
+  border:1px solid #e0e0e0;
+  outline: none;
+  font-size: 18px;
+}
+#Pmain .maininner form fieldset>div div{
+  content:"";
+  position:absolute;
+  display:block;
+  right:0;
+  top:0;
+  width:50px;
+  height:45px;
+  background-image:url("../img/icon-search.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#Pmain .maininner form fieldset>div input::placeholder{
+  color:#666;
+  font-size:16px;
+}
+#Pmain .maininner table{
+  width: 100%;
+  border-top: 1px solid #000;
+  margin-bottom: 45px;
+}
+#Pmain .maininner table tbody{
+  
+}
+#Pmain .maininner table tbody tr{
+  border-bottom: 1px solid #e5e5e5;
+}
+#Pmain .maininner table tbody tr td{
+  box-sizing: border-box;
+  padding:20px;
+  
+}
+#Pmain .maininner table tbody tr td:nth-of-type(1){
+  width:auto;
+}
+#Pmain .maininner table tbody tr td:nth-of-type(2){
+  width:120px;
+  color: #666;
+}
+#Pmain .maininner table tbody tr td a{
+  margin: 16px 0;
+  padding: 2px 0;
+  font-size: 20px;
+  display: inline-flex;
+  position:relative;
+}
+#Pmain .maininner table tbody tr td a::after{
+  content:"";
+  position:absolute;
+  display:block;
+  width:0%;
+  height: 1px;
+  background-color:#000;
+  bottom:-1px;
+  left:0;
+  transition:0.5s all;
+}
+#Pmain .maininner table tbody tr td a:hover::after{
+  width:100%
+}
+#Pmain .maininner > div{
+  text-align: center;
+}
+#Pmain .maininner > div ul{
+  display:inline-flex;
+}
+#Pmain .maininner > div ul li{
+  margin: 0 3px;
+}
+#Pmain .maininner > div ul li:nth-of-type(3){
+  margin-left:10px;
+}
+#Pmain .maininner > div ul li:nth-of-type(12){
+  margin-right:10px;
+}
+#Pmain .maininner > div ul li a{
+  display:inline-block;
+  width: 35px;
+  height: 35px;
+  border:1px solid #dcdcdc;
+  line-height: 35px;
+  color:#666;
+  box-sizing: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#Pmain .maininner > div ul li a:hover{
+  border-color:#aaa
+}
+#Pmain .maininner > div ul li:nth-of-type(1) a,
+#Pmain .maininner > div ul li:nth-of-type(14) a{
+  background-image: url("../img/icon-prev2.png")
+}
+#Pmain .maininner > div ul li:nth-of-type(2) a,
+#Pmain .maininner > div ul li:nth-of-type(13) a{
+  background-image: url("../img/icon-prev.png")
+}
+#Pmain .maininner > div ul li:nth-of-type(13) a,
+#Pmain .maininner > div ul li:nth-of-type(14) a{
+  transform: rotate(180deg);
+}

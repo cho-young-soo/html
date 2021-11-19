@@ -1,0 +1,33 @@
+@charset "UTF-8";
+#Pmain{
+  padding-top: 227px;
+}
+#Pmain .maininner{
+
+}
+#Pmain .maininner>div:nth-of-type(2){
+  margin-top:60px;
+}
+#Pmain .maininner div h2{
+  border-bottom: 1px solid #000;
+  height: 50px;
+  box-sizing: border-box;
+  margin-bottom:0;
+}
+#Pmain .maininner div ul{
+  width: 100%;
+  display:flex;
+  flex-wrap: wrap;
+}
+#Pmain .maininner div ul li{
+  width:50%;
+  margin-top:35px;
+}
+#Pmain .maininner div ul li h3{
+  font-weight: 700;
+  font-size:28px;
+  margin-bottom:10px;
+}
+#Pmain .maininner div ul li p{
+
+}

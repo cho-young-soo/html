@@ -1,0 +1,13 @@
+@charset "UTF-8";
+#title{
+  background-color:#ff103b;
+}
+#title .titleinner{
+
+}
+#title .titleinner::after{
+  background-image: url("../img/bg_icon_culture2.png");
+}
+#title .titleinner p{
+
+}

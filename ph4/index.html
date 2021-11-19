@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEMADE</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/Ititle.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/response.css">
+  <link rel="stylesheet" href="css/font.css">
+
+  <script src="js/jquery-3.6.0.min.js"></script>
+
+  <script>
+    $(window).ready(function () {
+      // 현재날짜
+      var nowDate = new Date();
+      var year = nowDate.getFullYear();
+      var month = nowDate.getMonth() + 1;
+      var date = nowDate.getDate();
+      $(".dateC").text(year + "-" + month + "-" + date);
+
+
+    });
+  </script>
+</head>
+
+<body>
+  <!-- 메인메뉴바 -->
+  <header>
+    <div class="container">
+      <h1 class="logo">
+        <a href="index.html">
+          <img src="img/Logotype_02_black_transparency.png" alt="WEMADE">
+        </a>
+      </h1>
+      <nav class="gnb">
+        <ul class="menu">
+          <li>
+            <a href="./Company/company.html" target="_self" class="menuTitle">회사소개</a>
+            <div class="hide">
+              <ul>
+                <li><a href="./Company/company.html" target="_self" class="subMenu">위메이드</a></li>
+                <li><a href="./Company/History/history.html" class="subMenu">연혁</a></li>
+                <li><a href="./Company/Partner/partner.html" class="subMenu">관계사</a></li>
+                <li><a href="./Company/Typeface/typeface.html" class="subMenu">CI/기업전용 서체</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="./Game/game.html" class="menuTitle">게임</a>
+            <div class="hide">
+              <ul>
+                <li><a href="./Game/game.html" class="subMenu">게임소개</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="./Promotion/promotion.html" class="menuTitle">홍보</a>
+            <div class="hide">
+              <ul>
+                <li><a href="./Promotion/promotion.html" class="subMenu">보도자료</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="./Recurit/recruit.html" class="menuTitle">인재채용</a>
+            <div class="hide">
+              <ul>
+                <li><a href="./Recurit/recruit.html" class="subMenu">기업문화</a></li>
+                <li><a href="Recurit/Job/job.html" class="subMenu">채용공고</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- 타이틀 -->
+  <div id="ititle">
+    <div class="titleimg">
+      <div class="wrapButton">
+        <a href="">자세히보기</a>
+      </div>
+    </div>
+  </div>
+  <!-- main -->
+  <section id="main">
+    <div class="inner">
+      <div class="news">
+        <h2>최신뉴스</h2>
+        <a href="">
+          <h3>동시 접속자 80만명, 위메이드 &lt;미르4&gt; 전설 넘어 새 역...</h3>
+          <p>㈜위메이드(대표 장현국)의 대작 모바일 MMORPG &lt;미르4&gt; 글로벌이 14일(목) 동시 접속자 수 80만명을 돌파하며 미르 IP 역사에 새로운 대기록을 썼다.</p>
+        </a>
+        <a href="" class="more">더보기</a>
+      </div>
+      <div class="stock">
+        <h2>주가정보</h2>
+        <dl class="price">
+          <dt class="currentT sr-only">현재가</dt>
+          <dd class="currentP">124,400</dd>
+          <dt class="compareT">전일대비</dt>
+          <dd class="compareP">4100</dd>
+          <dt class="percentT">등락률</dt>
+          <dd class="percentP">+3.41%</dd>
+        </dl>
+        <dl class="date">
+          <dt class="dateT sr-only">현재날짜</dt>
+          <dd class="dateC"></dd>
+        </dl>
+        <a href="" class="more">실적발표</a>
+      </div>
+      <div class="employment">
+        <h2>인재채용</h2>
+        <a href="">
+          <h3>열정과 꿈을 펼칠 기회! 위메이드에서 도전하세요.</h3>
+          <p>언제나 누구에게나 열려있는 마인드로 새롭고 창의적인 생각을 할 수 있는 곳. 꿈을 꾸고 도전하는 곳. 함께 이루는 기쁨과 보람이 있는 곳에서 꿈을 함께 이루어 보세요.</p>
+        </a>
+        <a href="" class="more">더보기</a>
+      </div>
+    </div>
+  </section>
+  <!-- footer -->
+  <footer>
+    <div class="companyInform">
+      <ul>
+        <li><a href="">기업윤리</a></li>
+        <li><a href="">개인정보 처리방침</a></li>
+        <li><a href="">오시는 길</a></li>
+      </ul>
+      <div class="companyAddress">
+        <address>경기도 성남시 분당구 대왕판교로 644번길 49 위메이드타워</address>
+        <dl class="tel">
+          <dt>대표전화</dt>
+          <dd>02.3709.2000</dd>
+          <dt>FAX</dt>
+          <dd>02.3709.2100</dd>
+        </dl>
+      </div>
+      <p class="copyright">ⓒ Wemade Co., Ltd. All rights reserved.</p>
+    </div>
+    <div class="reddot">
+      <img src="img/bg_reddot_footer.png" alt="레드닷">
+    </div>
+  </footer>
+  <div class="modalHide">
+    <div class="reddotModal">
+      <div class="reddotinner">
+        <div class="redotLeft">
+          <img src="img/bg_reddot_2019.png" alt="">
+        </div>
+        <div class="reddotRight">
+          <h2>WEMADE</h2>
+          <p>기업 아이덴티티 브랜드&커뮤니케이션<br>
+            본상 수상</p>
+          <h3>크레딧</h3>
+          <div class="list">
+            <dl>
+              <dt>클라이언트</dt>
+              <dd>위메이드</dd>
+            </dl>
+            <dl>
+              <dt>디자인</dt>
+              <dd>윤디자인그룹</dd>
+            </dl>
+            <dl>
+              <dt>크리에이티브 총괄</dt>
+              <dd>송모헌</dd>
+            </dl>
+            <dl>
+              <dt>디자인 총괄</dt>
+              <dd>김성훈</dd>
+            </dl>
+            <dl>
+              <dt>프로젝트 매니저</dt>
+              <dd>황재환</dd>
+            </dl>
+            <dl>
+              <dt>그래픽 디자인</dt>
+              <dd>최치영, 이영빈</dd>
+            </dl>
+            <dl>
+              <dt>글꼴 디자인</dt>
+              <dd>정유권 정송원</dd>
+            </dl>
+          </div>
+        </div>
+        <div class="closeBtn"></div>
+      </div>
+    </div>
+  </div>
+  <script src="js/reddot.js"></script>
+</body>
+
+</html>

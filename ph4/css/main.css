@@ -1,0 +1,138 @@
+@charset "UTF-8";
+#main{
+
+}
+#main .inner{
+  margin: 50px auto;
+  box-sizing: border-box;
+  padding: 0 60px;
+  display: flex;
+  justify-content: space-between;
+}
+#main .inner>div{
+  max-width: 31%;
+  padding-bottom: 20px;
+  flex-grow: 1;
+  position: relative;
+}
+#main .inner>div h2{
+
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #000;
+}
+#main .inner>div .more{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+#main .inner>div .more::after{
+  content:">";
+  margin-left:5px;
+  vertical-align: text-top;
+}
+#main .inner>div a:not(.more){
+  display:inline-block;
+  margin-bottom: 20px;
+}
+#main .inner>div a:hover h3{
+  text-decoration: underline;
+}
+#main .inner>div a h3{
+  margin-bottom: 8px;
+  line-height: 1.4;
+  font-weight: 500;
+  font-weight: 400\0;
+  font-size: 21px;
+  color: #333;
+}
+#main .inner>div a p{
+  color: #ccc;
+  line-height: 1.5;
+}
+#main .inner .stock .price dt{
+  margin:0 7px 0 15px;
+  color:#666;
+}
+#main .inner .news{
+
+}
+#main .inner .news h2{
+
+}
+#main .inner .news a{
+
+}
+#main .inner .news a h3{ 
+
+}
+#main .inner .news a p{
+
+}
+#main .inner .stock{
+  
+  display: flex;
+  flex-direction: column;
+}
+#main .inner .stock h2{
+  
+}
+#main .inner .stock .price{
+  display: flex;
+  align-items: baseline;
+}
+#main .inner .stock .price .currentT{
+  
+}
+#main .inner .stock .price .currentP{
+  color: #fe1413;
+  font-weight: 700;
+  font-size: 40px;
+}
+#main .inner .stock .price .compareT{
+  
+  font-size: 14px;
+}
+#main .inner .stock .price .compareP{
+  color: #fe1413;
+  font-size: 18px;
+  position:relative;
+  display:inline-block;
+}
+#main .inner .stock .price .compareP::before{
+  content:"";
+  display:inline-block;
+  border-left:8px solid transparent;
+  border-right:8px solid transparent;
+  border-bottom:11px solid #fe1413;
+  margin-right: 7px;
+}
+#main .inner .stock .price .percentT{
+  font-size: 14px;
+}
+#main .inner .stock .price .percentP{
+  color: #fe1413;
+  font-size: 18px;
+}
+#main .inner .stock .date{
+  margin:15px 0 33px 0;
+}
+#main .inner .stock .date .dateC{
+  color: #888;
+  font-size: 14px;
+}
+#main .inner .employment{
+  
+}
+#main .inner .employment h2{
+  
+}
+#main .inner .employment a{
+  
+}
+#main .inner .employment a h3{
+  
+}
+#main .inner .employment a p{
+  
+}

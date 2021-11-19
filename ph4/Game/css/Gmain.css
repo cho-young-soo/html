@@ -1,0 +1,210 @@
+/* 공통  */
+#Gmain .maininner>div:not(.pc){
+  padding-bottom:20px;
+  border-bottom:1px solid #ebebeb;
+  margin-bottom:60px;
+}
+
+#Gmain{
+margin-bottom:120px;
+}
+
+#Gmain .maininner{
+
+}
+#Gmain .maininner .mir{
+  width: 100%;
+}
+#Gmain .maininner .mir>ul{
+  width:100%;
+}
+#Gmain .maininner .mir>ul>li{
+  width:100%;
+}
+#Gmain .maininner .mir>ul>li:nth-of-type(1){
+  padding:16px 0 0 600px;
+  box-sizing: border-box;
+  height: 306px;
+  margin-bottom: 60px;
+  position: relative;
+}
+#Gmain .maininner .mir>ul>li:nth-of-type(1)::before{
+  content:"";
+  position:absolute;
+  background-image:url("../img/bg_intro_mirseries.jpg");
+  top:0;
+  left:0;
+  width: 580px;
+  height: 306px;
+  background-repeat: no-repeat;
+}
+#Gmain .maininner .mir>ul>li h2{
+  width: 230px;
+  height: 121px;
+  background-image: url("../img/bg_mir_trilogy.png");
+  margin-bottom:25px;
+  text-indent: -9999px;
+}
+#Gmain .maininner .mir>ul>li>p{
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+#Gmain .maininner .mir>ul>li a{
+}
+#Gmain .maininner .mir>ul>li a::after{
+}
+#Gmain .maininner .mir>ul>li ul{
+  display:flex;
+}
+#Gmain .maininner .mir>ul>li ul li{
+  flex:1;
+  width: 560px;
+  height: 155px;
+  box-sizing: border-box;
+  padding: 4px 0 0 148px;
+  position: relative;
+}
+#Gmain .maininner .mir>ul>li ul li:not(:nth-of-type(1)){
+  margin-left: 50px;
+}
+#Gmain .maininner .mir>ul>li ul li:not(:nth-of-type(1))::before{
+  content:"";
+  display: block;
+  width:115px;
+  height: 115px;
+  background-image:url("../img/bg_introgame_empty.png");
+  position:absolute;
+  left:0;
+  top:0;
+}
+#Gmain .maininner .mir>ul>li ul li img{
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 115px;
+}
+#Gmain .maininner .mir>ul>li ul li h3{
+
+}
+#Gmain .maininner .mir>ul>li ul li h3::after{
+
+}
+#Gmain .maininner .mir>ul>li ul li:nth-of-type(1) h3::after{
+  content:"롤플레잉";
+}
+#Gmain .maininner .mir>ul>li ul li:nth-of-type(2) h3::after{
+  content:"롤플레잉";
+}
+#Gmain .maininner .mir>ul>li ul li:nth-of-type(3) h3::after{
+  content:"전략";
+}
+#Gmain .maininner .mir>ul>li ul li button{
+
+  background-image: url("../img/sp-introgame-market.png");
+  width: 18px;
+  height: 19px;
+  position: relative;
+}
+#Gmain .maininner .mir>ul>li ul li button:not(:nth-of-type(1)){
+  margin-left: 10px;
+}
+#Gmain .maininner .mir>ul>li ul li button:nth-of-type(1){
+  background-position-y: -30px;
+  width:18px;
+  height:23px;
+}
+#Gmain .maininner .mir>ul>li ul li button:nth-of-type(3){
+  background-position-y: -60px;
+  width: 19px;
+}
+#Gmain .maininner .mir>ul>li ul li p{
+
+}
+#Gmain .maininner .mobile{
+
+}
+#Gmain .maininner .mobile h2{
+  margin-bottom: 48px;
+}
+#Gmain .maininner .mobile ul{
+  display:flex;
+}
+#Gmain .maininner .mobile ul li{
+  flex:1;
+  width: 560px;
+  height: 155px;
+  box-sizing: border-box;
+  padding: 4px 0 0 148px;
+  position: relative;
+}
+#Gmain .maininner .mobile ul li img{
+  position: absolute;
+  top: 0;
+  left:0;
+}
+#Gmain .maininner .mobile ul li h3{
+
+}
+#Gmain .maininner .mobile ul li h3::after{
+
+}
+#Gmain .maininner .mobile ul li:nth-of-type(1) h3::after{
+  content:"롤플레잉"
+}
+#Gmain .maininner .mobile ul li:nth-of-type(2) h3::after{
+  content:"스포츠"
+}
+#Gmain .maininner .mobile ul li button{
+  background-image: url("../img/sp-introgame-market.png");
+  width: 18px;
+  height: 19px;
+  position: relative;
+}
+#Gmain .maininner .mobile>ul li button:not(:nth-of-type(1)){
+  margin-left: 10px;
+}
+#Gmain .maininner .mobile>ul li button:nth-of-type(1){
+  background-position-y: -30px;
+  width:18px;
+  height:23px;
+}
+#Gmain .maininner .mobile>ul li button:nth-of-type(3){
+  background-position-y: -60px;
+  width: 19px;
+}
+#Gmain .maininner .pc{
+
+}
+#Gmain .maininner .pc h2{
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 48px;
+}
+#Gmain .maininner .pc ul{
+  display:flex;
+  flex-wrap: wrap;
+}
+#Gmain .maininner .pc ul li{
+  width: 560px;
+  height: 190px;
+  box-sizing: border-box;
+  padding: 8px 0 0 290px;
+  position: relative;
+}
+#Gmain .maininner .pc ul li img{
+  position: absolute;
+  top: 0;
+  left:0;
+}
+#Gmain .maininner .pc ul li h3{
+
+}
+#Gmain .maininner .pc ul li h3::after{
+  content:"롤플레잉";
+}
+#Gmain .maininner .pc ul li a{
+}
+#Gmain .maininner .pc ul li a::after{
+
+}

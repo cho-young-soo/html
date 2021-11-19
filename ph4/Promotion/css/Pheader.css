@@ -1,0 +1,27 @@
+@charset "UTF-8";
+header .container .gnb .menu > li:nth-of-type(3) .hide{
+  display: block;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 72px;
+  height: 72px;
+}
+header .container .gnb .menu > li div ul{
+  height: 85px;
+  background-color:#faf9f9;
+
+}
+header .container .gnb .menu > li:nth-of-type(3) div ul li:nth-of-type(1) .subMenu{
+  color:#000;
+}
+header .container .gnb .menu > li:nth-of-type(3) div ul li:nth-of-type(1) .subMenu::before{
+  content:"";
+  display:block;
+  position:absolute;
+  border-top:8px solid transparent;
+  border-bottom:8px solid transparent;
+  border-left:8px solid #000;
+  color:#000;
+  left:20px;
+}
