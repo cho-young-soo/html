@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACRO</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/gnb.css">
+  <link rel="stylesheet" href="css/search.css">
+  <link rel="stylesheet" href="css/title.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/response.css">
+  <link rel="stylesheet" href="css/font.css"> 
+
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // 스크롤 시 메뉴바 탑 고정
+      $(window).on("scroll", function () {
+        if ($(window).scrollTop() == 0) {
+          $("header").css({
+            "position": "initial"
+          });
+          $(".title").css({
+            "padding-top": 0
+          });
+        } else {
+          $("header").css({
+            "position": "fixed",
+            "background-color": "#fff",
+            "z-index": 1
+          });
+          $(".title").css({
+            "padding-top": "60px"
+          });
+        }
+      });
+      // 메뉴클릭시 메뉴창 등장
+      $("header .container .menu").on("click",function(){
+        $("html").css({"overflow":"hidden"});
+        $(".gnb").css({"display":"block"});
+      });
+      // 닫기 클릭시 메뉴창 종료
+      $(".gnb .container .menuRight .close button").on("click",function(){
+        $("html").css({"overflow":"initial"});
+        $(".gnb").css({"display":"none"});
+      });
+      // 마우스 위치에 따른  메뉴 색상 변경
+      $(".gnb .container .menuLeft ul.menuList li").mouseover(function(){
+        $(this).siblings().children().addClass("othermenu");
+      });
+      $(".gnb .container .menuLeft ul.menuList li").mouseleave(function(){
+        $(this).siblings().children().removeClass("othermenu");
+      });
+
+      // 기타메뉴 마우스위치에 따른 색상 변경
+      $(".gnb .container .menuLeft ul.menuEtc li").mouseover(function(){
+        $(this).children().css({"color":"#fff"});
+      });
+      $(".gnb .container .menuLeft ul.menuEtc li").mouseleave(function(){
+        $(this).children().css({"color":"#7a7a7a"});
+      });
+
+    // searchButton 클릭시 검색창
+    $(".searchButton").on("click", function(){
+      $("html").css({"overflow":"hidden"});
+      $(".search").css({"display":"block"});  
+    });
+    // search의 닫기 버튼 클릭시
+    $(".search .searchbox .container div .closeBtn").on("click", function(){
+      $("html").css({"overflow":"initial"});
+      $(".search").css({"display":"none"});  
+    });
+      // 위쪽으로 슬라이드
+      // 현재위치에서 슬라이드
+      // 타이틀 
+      var slideUp={"opacity":"1","transform":"translateY(0)"};
+      $(".title .container div").css(slideUp);
+      $(".title .container figure").css(slideUp);
+      var scrollValue = $(document).scrollTop();
+
+      // 브랜드
+      if (scrollValue >= $(document).height() * 0.1) {
+        $("#brand .container .comment").css(slideUp);
+        $("#brand .container .img").css(slideUp);
+      }
+      // 단지정보
+      if (scrollValue >= $(document).height() * 0.2) {
+        $("#inform .container div").css(slideUp);
+        $("#inform .container .informList li").css(slideUp);
+      }
+      // 디자인 스토리
+      if (scrollValue >= $(document).height() * 0.45) {
+        $("#design .container .comment").css(slideUp);
+        $("#design .container .img").css(slideUp);
+      }
+      // 갤러리
+      if (scrollValue >= $(document).height() * 0.58) {
+        $("#gallery .container>div").css(slideUp);
+        $("#gallery .container figure").css(slideUp);
+      }
+        
+      // 스크롤 시 밑에 위로 슬라이드
+      $(window).scroll(function () {
+        scrollValue = $(document).scrollTop();
+        // 브랜드 부분
+        if (scrollValue >= $(document).height() * 0.1) {
+          $("#brand .container .comment").css(slideUp);
+          $("#brand .container .img").css(slideUp);
+        }
+        // 단지정보
+        if (scrollValue >= $(document).height() * 0.2) {
+          $("#inform .container div").css(slideUp);
+          $("#inform .container .informList li").css(slideUp);
+        }
+        // 디자인 스토리
+        if (scrollValue >= $(document).height() * 0.45) {
+          $("#design .container .comment").css(slideUp);
+          $("#design .container .img").css(slideUp);
+        }
+        // 갤러리
+        if (scrollValue >= $(document).height() * 0.58) {
+          $("#gallery .container>div").css(slideUp);
+          $("#gallery .container figure").css(slideUp);
+        }
+      });
+      // 이미지 리스트 생성
+      // 브랜드 이미지 
+      $("#brand .container .img").append("<div class='list'></div>");
+      for (Bi = 1; Bi <= $("#brand .container .img .imgList li").length; Bi++) {
+        $("#brand .container .img .list").append("<div></div>");
+      }
+      // 디자인 스토리
+      $("#design .container .img").append("<div class='list'></div>");
+      for (Di = 1; Di <= $("#design .container .img .imgList li").length; Di++) {
+        $("#design .container .img .list").append("<div></div>");
+      }
+      
+      // 첫 타이틀 리스트 표시
+      var Bi2;
+      var Di2;
+      $("#brand .container .img .list div:first-child").addClass("currentImg");
+      $("#design .container .img .list div:first-child").addClass("currentImg");
+      
+      // 이미지 슬라이드 효과
+      // 브랜드
+      function brandSlideMove() {
+        Bi2 = Bi + 1;
+        if (Bi < $("#brand .container .img .imgList li").length) {
+          $("#brand .container .img .imgList li:nth-child(" + Bi + ")").fadeOut(2000); // i번째 이미지 fadeOut
+          $("#brand .container .img .imgList li:nth-child(" + Bi2 + ")").fadeIn(2000); //i+1번째 이미지 fadeIn
+          $("#brand .container .img .list div:nth-child(" + Bi2 + ")").addClass("currentImg"); // 목차 i+1번 째에 클래스를 추가해 색상을 변경
+          $("#brand .container .img .list div:nth-child(" + Bi2 + ")").siblings().removeClass(
+            "currentImg"); // 나머지 목차에서 class를 제거해서 초기화
+          Bi++;
+        } else {
+          $("#brand .container .img .imgList li:nth-child(" + Bi + ")").fadeOut(2000);
+          Bi = 1;
+          Bi2 = 1;
+          $("#brand .container .img .imgList li:nth-child(" + Bi + ")").fadeIn(2000);
+          $("#brand .container .img .list div:nth-child(" + Bi2 + ")").addClass("currentImg");
+          $("#brand .container .img .list div:nth-child(" + Bi2 + ")").siblings().removeClass("currentImg");
+        }
+      }
+
+      // 자동으로 돌아감
+      var brandSlide = setInterval(brandSlideMove, 4000);
+
+      // 목차를 클릭했을 경우
+      var BclickedValue;
+      var BclickedValue2;
+      // 목차를 클릭했을 때 타이틀 슬라이드 함수
+      function brandSlideMove2() {
+        BclickedValue2 = BclickedValue + 1;
+        if (BclickedValue < $("#brand .container .img .imgList li").length) {
+          $("#brand .container .img .imgList li:nth-child(" + BclickedValue + ")").fadeOut(2000); // 클릭한 이미지 fadeOut
+          $("#brand .container .img .imgList li:nth-child(" + BclickedValue2 + ")").fadeIn(2000); // 클릭한 다음 순번 이미지 fadeIn
+          $("#brand .container .img .list div:nth-child(" + BclickedValue2 + ")").addClass(
+          "currentImg"); // 클락한 목차+1번 째에 클래스를 추가해 색상을 변경
+          $("#brand .container .img .list div:nth-child(" + BclickedValue2 + ")").siblings().removeClass("currentImg"); // 나머지 목차에서 class를 제거해서 초기화
+          BclickedValue++;
+        } else {
+          $("#brand .container .img .imgList li:nth-child(" + BclickedValue + ")").fadeOut(2000);
+          BclickedValue = 1;
+          BclickedValue2 = 1;
+          $("#brand .container .img .imgList li:nth-child(" + BclickedValue + ")").fadeIn(2000);
+          $("#brand .container .img .list div:nth-child(" + BclickedValue2 + ")").addClass("currentImg");
+          $("#brand .container .img .list div:nth-child(" + BclickedValue2 + ")").siblings().removeClass("currentImg");
+        }
+      }
+
+      // 목차를 클릭했을 때 함수 작동
+      var Bclickcount=1;
+      var brandSlide2;
+      $("#brand .container .img .list div").on("click", function () {
+        if(Bclickcount<=1){
+          BclickedValue = $(this).index() + 1;
+          clearInterval(brandSlide);
+          $("#brand .container .img .imgList li:nth-child(" + Bi + ")").fadeOut(2000);
+          $("#brand .container .img .imgList li:nth-child(" + BclickedValue + ")").fadeIn(2000);
+          $("#brand .container .img .list div:nth-child(" + BclickedValue + ")").addClass("currentImg");
+          $("#brand .container .img .list div:nth-child(" + BclickedValue + ")").siblings().removeClass("currentImg");
+          brandSlide2 = setInterval(function () {
+            brandSlideMove2();
+          }, 4000);
+          Bclickcount++;
+        }else{
+          Bi=BclickedValue;
+          BclickedValue = $(this).index() + 1;
+          clearInterval(brandSlide2);
+          $("#brand .container .img .imgList li:nth-child(" + Bi + ")").fadeOut(2000);
+          $("#brand .container .img .imgList li:nth-child(" + BclickedValue + ")").fadeIn(2000);
+          $("#brand .container .img .list div:nth-child(" + BclickedValue + ")").addClass("currentImg");
+          $("#brand .container .img .list div:nth-child(" + BclickedValue + ")").siblings().removeClass("currentImg");
+          brandSlide2= setInterval(function () {
+            brandSlideMove2();
+          }, 4000);
+        }
+      });
+      // 디자인스토리
+      function designSlideMove() {
+        Di2 = Di + 1;
+        if (Di < $("#design .container .img .imgList li").length) {
+          $("#design .container .img .imgList li:nth-child(" + Di + ")").fadeOut(2000); // i번째 이미지 fadeOut
+          $("#design .container .img .imgList li:nth-child(" + Di2 + ")").fadeIn(2000); //i+1번째 이미지 fadeIn
+          $("#design .container .img .list div:nth-child(" + Di2 + ")").addClass("currentImg"); // 목차 i+1번 째에 클래스를 추가해 색상을 변경
+          $("#design .container .img .list div:nth-child(" + Di2 + ")").siblings().removeClass(
+            "currentImg"); // 나머지 목차에서 class를 제거해서 초기화
+          Di++;
+        } else {
+          $("#design .container .img .imgList li:nth-child(" + Di + ")").fadeOut(2000);
+          Di = 1;
+          Di2 = 1;
+          $("#design .container .img .imgList li:nth-child(" + Di + ")").fadeIn(2000);
+          $("#design .container .img .list div:nth-child(" + Di2 + ")").addClass("currentImg");
+          $("#design .container .img .list div:nth-child(" + Di2 + ")").siblings().removeClass("currentImg");
+        }
+      }
+
+      // 자동으로 돌아감
+      var designSlide = setInterval(designSlideMove, 4000);
+
+      // 목차를 클릭했을 경우
+      var DclickedValue;
+      var DclickedValue2;
+      // 목차를 클릭했을 때 타이틀 슬라이드 함수
+      function designSlideMove2() {
+        DclickedValue2 = DclickedValue + 1;
+        if (DclickedValue < $("#design .container .img .imgList li").length) {
+          $("#design .container .img .imgList li:nth-child(" + DclickedValue + ")").fadeOut(2000); // 클릭한 이미지 fadeOut
+          $("#design .container .img .imgList li:nth-child(" + DclickedValue2 + ")").fadeIn(2000); // 클릭한 다음 순번 이미지 fadeIn
+          $("#design .container .img .list div:nth-child(" + DclickedValue2 + ")").addClass(
+          "currentImg"); // 클락한 목차+1번 째에 클래스를 추가해 색상을 변경
+          $("#design .container .img .list div:nth-child(" + DclickedValue2 + ")").siblings().removeClass("currentImg"); // 나머지 목차에서 class를 제거해서 초기화
+          DclickedValue++;
+        } else {
+          $("#design .container .img .imgList li:nth-child(" + DclickedValue + ")").fadeOut(2000);
+          DclickedValue = 1;
+          DclickedValue2 = 1;
+          $("#design .container .img .imgList li:nth-child(" + DclickedValue + ")").fadeIn(2000);
+          $("#design .container .img .list div:nth-child(" + DclickedValue2 + ")").addClass("currentImg");
+          $("#design .container .img .list div:nth-child(" + DclickedValue2 + ")").siblings().removeClass("currentImg");
+        }
+      }
+
+      // 목차를 클릭했을 때 함수 작동
+      var Dclickcount=1;
+      var brandSlide2;
+      $("#design .container .img .list div").on("click", function () {
+        if(Dclickcount<=1){
+          DclickedValue = $(this).index() + 1;
+          clearInterval(designSlide);
+          $("#design .container .img .imgList li:nth-child(" + Di + ")").fadeOut(2000);
+          $("#design .container .img .imgList li:nth-child(" + DclickedValue + ")").fadeIn(2000);
+          $("#design .container .img .list div:nth-child(" + DclickedValue + ")").addClass("currentImg");
+          $("#design .container .img .list div:nth-child(" + DclickedValue + ")").siblings().removeClass("currentImg");
+          designSlide2 = setInterval(function () {
+            designSlideMove2();
+          }, 4000);
+          Dclickcount++;
+        }else{
+          Di=DclickedValue;
+          DclickedValue = $(this).index() + 1;
+          clearInterval(designSlide2);
+          $("#design .container .img .imgList li:nth-child(" + Di + ")").fadeOut(2000);
+          $("#design .container .img .imgList li:nth-child(" + DclickedValue + ")").fadeIn(2000);
+          $("#design .container .img .list div:nth-child(" + DclickedValue + ")").addClass("currentImg");
+          $("#design .container .img .list div:nth-child(" + DclickedValue + ")").siblings().removeClass("currentImg");
+          designSlide2= setInterval(function () {
+            designSlideMove2();
+          }, 4000);
+        }
+      });
+      
+
+      // 단지정보 바로가기 클릭시 이미지 확대
+      $("#inform .container .informList li .more").hover(function(){
+        $(this).siblings("figure").children().css({"scale":"1.2"});
+      },function(){
+        $(this).siblings("figure").children().css({"scale":"initial"});
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="container border-leftright">
+      <button class="menu">
+        <span class="menuShape">
+        </span>
+        <span class="menuTitle">
+          메뉴
+        </span>
+      </button>
+      <h1><a href="">ACRO</a></h1>
+      <div class="enb">
+        <ul>
+          <li><a href="">고객센터</a></li>
+          <li><a href="">로그인</a></li>
+          <li><a href="">회원가입</a></li>
+        </ul>
+        <button class="searchButton">찾기</button>
+      </div>
+    </div>
+  </header>
+  <div class="gnb">
+    <div class="container">
+      <div class="menuLeft">
+        <h2><a href="">ACRO</a></h2>
+        <ul class="menuList">
+          <li><a href="">브랜드<span>Brand</span></a></li>
+          <li><a href="">단지 정보<span>Landmark</span></a></li>
+          <li><a href="">아크로 갤러리<span>ACRO Gallery</span></a></li>
+          <li><a href="">새소식<span>ACRO News</span></a></li>
+        </ul>
+        <ul class="menuEtc">
+          <li><a href="">고객센터</a></li>
+          <li><a href="">로그인</a></li>
+          <li><a href="">회원가입</a></li>
+        </ul>
+      </div>
+      <div class="menuRight">
+        <div class="close"><button class="closeBtn"></button></div>
+        <a href="">
+          <figure>
+            <img src="img/inform-01.jpg" alt="">
+            <figcaption>아크로 서울포레스트</figcaption>
+          </figure>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="search">
+    <div class="searchbox">
+      <div class="container border-leftright">
+        <div class="searchHeader">
+          <h2><a href="">ACRO</a></h2>
+        </div>
+        <div class="searchBody">
+          <div class="searchForm">
+            <form action="#">
+              <fieldset>
+                <label for="searchInput" class="sr-only">검색어 입력</label>
+                <input type="text" placeholder="검색어를 입력하세요" id="searchInput">
+                <button></button>
+              </fieldset>
+            </form>
+          </div>
+          <div class="recommend">
+            <h3>추천검색어</h3>
+            <ul class="recommendList">
+              <li><a href="">1. 아크로 힐스논현</a></li>
+              <li><a href="">2. 아크로 타워스퀘어</a></li>
+              <li><a href="">3. 아크롤 리버파크</a></li>
+              <li><a href="">4. 아크로 서울포레스트</a></li>
+              <li><a href="">5. 아크로 리버하임</a></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <button class="closeBtn"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <main>
+    <!-- 타이틀 -->
+    <div class="title bottomLine">
+      <div class="container border-leftright">
+        <div class="slideUP">
+          <h2>The Only One</h2>
+          <p>모두의 선망의 대상이자 시간이 흘러도 변하지 않는 랜드마크가 되는 곳<br>
+            <strong>ONE & ONLY,ACRO 그 컬렉션의 가치를 소유하세요.</strong></p>
+        </div>
+        <figure class="slideUP">
+          <img src="img/img_visual.jpg" alt="">
+          <button onclick = "location.href = ''" >재생</button>
+        </figure>
+      </div>
+    </div>
+    <!-- 브랜드 -->
+    <section id="brand" class="bottomLine">
+      <div class="container border-leftright">
+        <div class="comment slideUP">
+              <h3 class="h3">브랜드</h3>
+              <p class="p">가장 앞선, 절대 우위의 독보적인 하이엔드 주거의<br>
+                새로운 기준을 제시합니다.</p>
+              <a href="" class="more">더보기</a>
+        </div>
+        <div class="img slideUP">
+          <ul class="imgList">
+            <li><img src="img/img_highend01.jpg" alt="브랜드1"></li>
+            <li class="hide"><img src="img/img_highend02.jpg" alt="브랜드2"></li>
+            <li class="hide"><img src="img/img_highend03.jpg" alt="브랜드3"></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- 단지정보 -->
+    <section id="inform" class="bottomLine">
+      <div class="container border-leftright">
+        <div class="slideUP">
+          <h3 class="h3">단지 정보</h3>
+          <p class="p">시간이 흘러도 변하지 않는 희소가치를 지닌 아크로의 랜드마크를 소개합니다.</p>
+          <a href="" class="more">더보기</a>
+        </div>
+        <ul class="informList">
+          <li class="slideUP">
+            <figure>
+              <img src="img/inform-01.jpg" alt="">
+            </figure>
+            <h4>아크로 서울포레스트</h4>
+            <a href="" class="more">바로가기</a>
+          </li>
+          <li class="slideUP">
+            <figure>
+              <img src="img/inform-02.jpg" alt="">
+            </figure>
+            <h4>아크로 리버하임</h4>
+            <a href="" class="more">바로가기</a>
+          </li>
+          <li class="slideUP">
+            <figure>
+              <img src="img/inform-03.jpg" alt="">
+            </figure>
+            <h4>아크로 리버뷰</h4>
+            <a href="" class="more">바로가기</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- 디자인 -->
+    <section id="design" class="bottomLine">
+      <div class="container border-leftright">
+        <div class="comment slideUP">
+          <h3 class="h3">디자인 스토리</h3>
+          <p class="p">타협하지 않는 엄격한 기준으로<br>
+            하이엔드 주고 공간의 품격을 완성합니다.</p>
+          <a href="" class="more">더보기</a>
+        </div>
+        <div class="img slideUP">
+          <ul class="imgList">
+            <li><img src="img/img_beyond01.jpg" alt="디자인1"></li>
+            <li class="hide"><img src="img/img_beyond02.jpg" alt="디자인2"></li>
+            <li class="hide"><img src="img/img_beyond03.jpg" alt="디자인3"></li>
+            <li class="hide"><img src="img/img_beyond04.jpg" alt="디자인4"></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- 갤러리 -->
+    <section id="gallery" class="bottomLine">
+      <div class="container border-leftright">
+        <div class="slideUP">
+          <h3 class="h3">아크로 갤러리</h3>
+          <p class="p">취향과 안목을 지닌 라이프스타일 컬렉터에게 새로운 라이프 스타일을 제시합니다.</p>
+        </div>
+        <figure class="slideUP">
+          <a href="">
+            <img src="img/img_banner.jpg" alt="">
+            <div>
+              <h4>ACRO Gallery</h4>
+              <p>아크로를 경험하는 가장 완벽한 공간</p>
+            </div>
+          </a>
+        </figure>
+      </div>
+    </section>
+  </main>
+  <footer class="bottomLine">
+    <div class="container border-leftright">
+      <ul class="footerList">
+        <li><a href="">이용약관</a></li>
+        <li><a href="">개인정보 처리방침</a></li>
+        <li><a href="">영상정보처리 기기운영및 관리방침</a></li>
+        <li><a href="">이메일무단수집거부</a></li>
+        <li><a href="">사이트맵</a></li>
+      </ul>
+      <dl>
+        <dt>사업자명</dt>
+        <dd>디엘이앤씨(주)</dd>
+        <dt>사업자등록증</dt>
+        <dd>676-87-01904</dd>
+        <dt>대표자</dt>
+        <dd>마창민</dd>
+      </dl>
+      <p class="announce">본 사이트에 사용된 CG 및 일러스트, 이미지 등은 소비자의 이해를 돕기 위한 것으로 실제와 다를 수 있습니다.</p>
+      <p class="copyright">© DL E&C. All rights Reserved.</p>
+      <a href="" class="logo"></a>
+    </div>
+
+  </footer>
+</body>
+
+</html>

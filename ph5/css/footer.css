@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+footer {
+  margin-bottom: 60px;
+}
+
+footer .container{
+  flex-direction: column;
+  position:relative;
+  padding: 75px 0 90px;
+}
+footer .container::before{
+  content:"";
+  display:block;
+  position:absolute;
+  width:1px;
+  height:60px;
+  background-color:#ddd;
+  left:-1px;
+  bottom:-60px;
+}
+footer .container::after{
+  content:"";
+  display:block;
+  position:absolute;
+  width:1px;
+  height:60px;
+  background-color:#ddd;
+  right:-1px;
+  bottom:-60px;
+}
+footer .container .footerList{
+  display:flex;
+  gap:30px;
+  margin-bottom: 23px;
+}
+footer .container .footerList li{
+  position:relative;
+}
+footer .container .footerList li:not(:first-child)::before{
+  content:"";
+  display:inline-block;
+  position:absolute;
+  width:1px;
+  height:14px;
+  background-color:#ddd;
+  left:-15px;
+  top:3px;
+  
+}
+footer .container .footerList a{
+  
+}
+footer .container .footerList a::hover{
+  text-decoration: underline;
+}
+footer .container dl{
+  color: #aaa;
+  margin-bottom: 16px;
+}
+footer .container dl dt{
+  float:left;
+  margin-left: 15px;
+}
+footer .container dl dt::after{
+  content:":";
+  margin-left:6px;
+}
+footer .container dl dd{
+  float:left;
+  margin-left:6px;
+}
+footer .container .announce{
+  color: #aaa;
+  margin-bottom: 14px;
+}
+footer .container .copyright{
+  color: #aaa;
+  margin-bottom: 68px;
+}
+footer .logo {
+  background: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='49' height='49'%3E%3Cpath fill='%23E5E5E5' fill-rule='evenodd' d='M31.711 28.506l-.056-.019-.02-.056-5.912-16.34h-2.449l-5.935 16.396-.055.019a22.732 22.732 0 00-7.374 4.092l-.363.3L21.062 2.983h6.873l.029.079 11.485 29.837-.363-.301a22.737 22.737 0 00-7.375-4.092m-11.14-.826l3.926-10.81 3.927 10.81-.207-.034a22.808 22.808 0 00-7.438 0l-.208.034zm11.753 11.384a14.352 14.352 0 00-7.827-2.309c-2.791 0-5.497.799-7.825 2.309l-.309.2 3.136-8.632.063-.016a20.328 20.328 0 019.871 0l.064.016.021.062 3.113 8.569-.307-.199zm10.568 2.781l2.659 6.907h2.933L29.813.245H19.2L.512 48.752h2.933l2.659-6.907a20.293 20.293 0 019.764-9.905l.269-.128-6.13 16.94h2.91l.889-2.451c1.918-4.179 6.112-6.873 10.691-6.873 4.58 0 8.771 2.685 10.68 6.843l.902 2.481h2.909l-6.129-16.94.27.128a20.299 20.299 0 019.763 9.905'/%3E%3C/svg%3E");
+  width: 49px;
+  height: 49px;
+  display: block;
+}

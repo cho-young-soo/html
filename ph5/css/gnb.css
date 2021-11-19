@@ -1,0 +1,168 @@
+@charset "UTF-8";
+/* 공통 */
+.gnb{
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  width: 100%;
+  height: 100%; 
+  z-index: 2;
+  display:none;
+}
+.gnb .container{
+  padding: 60px 0;
+  border-right: 1px solid rgba(229,229,229,0.2);
+  border-left: 1px solid rgba(229,229,229,0.2);
+  position: relative;
+  height: 100%;
+  box-sizing:border-box;
+}
+.gnb .container::before{
+  content:"";
+  display:block;
+  position:absolute;
+  background-color:rgba(229,229,229,0.2);
+  top:60px;
+  left: -60px;
+  right: 0;
+  height: 1px;
+  margin-right: -60px;
+  overflow: hidden;
+}
+.gnb .container::after{
+  content:"";
+  display:block;
+  position:absolute;
+  background-color:rgba(229,229,229,0.2);
+  bottom:60px;
+  left: -60px;
+  right: 0;
+  height: 1px;
+  margin-right: -60px;
+}
+.gnb .container .menuLeft{
+  width:60%;
+  padding: 3% 5%;
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(229,229,229,0.2);
+  justify-content: space-between;
+}
+.gnb .container .menuLeft h2{
+
+  margin-bottom: 70px;
+}
+.gnb .container .menuLeft h2 a{
+  font-size:25px;
+  color:#fff;
+}
+.gnb .container .menuLeft ul.menuList{
+  margin-bottom: 50px;
+}
+.gnb .container .menuLeft ul.menuList li{
+  margin-bottom: 30px;
+}
+.gnb .container .menuLeft ul.menuList li a{
+  font-size:64px;
+  color:#fff;
+  transition: all 0.5s;
+}
+.gnb .container .menuLeft ul.menuList li a span{
+  font-size:30px;
+  padding-left:10px;
+}
+.gnb .container .menuLeft ul.menuList li a span::before{
+  display: inline-block;
+content: '/';
+color: #292929;
+padding-right: 10px;
+font-size: 24px;
+}
+
+.gnb .container .menuLeft ul.menuEtc{
+  display:flex;
+}
+.gnb .container .menuLeft ul.menuEtc li{ 
+  padding:0 20px;
+  position: relative;
+}
+.gnb .container .menuLeft ul.menuEtc li:nth-of-type(1){ 
+  padding-left:0;
+}
+.gnb .container .menuLeft ul.menuEtc li:not(:nth-of-type(1))::before{
+  content:"·";
+  display:inline-block;
+  vertical-align: middle;
+  color: #7a7a7a;
+  position:absolute;
+  left:0;
+  top:50%;
+  transform: translateY(-50%);
+}
+.gnb .container .menuLeft ul.menuEtc li a{ 
+  font-size:22px;
+  color:#7a7a7a;
+  transition: all 0.5s;
+}
+.gnb .container .menuRight{
+  width:40%;
+  display: flex;
+  flex-direction: column;
+    height:100%;
+}
+.gnb .container .menuRight .close{
+  padding: 40px 40px 35px 0;
+  text-align: right;
+  border-bottom: 1px solid rgba(229, 229, 229, 0.2);
+}
+.gnb .container .menuRight .close .closeBtn{
+  position:relative;
+  width:36px;
+  height:36px;
+}
+/* .gnb .container .menuRight>div .close::before{
+  content:"";
+  display:block;
+  position:absolute;
+  width:100%;
+  height:2px;
+  background-color:#fff;
+  top:50%;
+  transform:translateY(50%) rotate(45deg);
+  transform-origin: center;
+}
+.gnb .container .menuRight>div .close::after{
+  content:"";
+  display:block;
+  position:absolute;
+  width:100%;
+  height:2px;
+  background-color:#fff;
+  top:50%;
+  transform:translateY(50%) rotate(-45deg);
+  transform-origin: center;
+} */
+.gnb .container .menuRight figure{
+  text-align: center;
+  height: 320px;
+  padding-top: 100px;
+  width: 400px;
+  margin: 0 auto;
+}
+.gnb .container .menuRight figure img{
+  height: 250px;
+  width: 400px;
+  margin-bottom:16px;
+}
+.gnb .container .menuRight figure figcaption{
+  color:#fff;
+  text-align: left;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(229,229,229,0.2);
+  font-size: 20px;
+}

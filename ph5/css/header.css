@@ -1,0 +1,87 @@
+@charset "UTF-8";
+header{
+  border-bottom:1px solid #ddd;
+  height: 60px;
+  width: 100%;
+}
+header .container{
+  padding: 0px 50px;
+}
+header .container .menu{
+
+}
+header .container .menu .menuShape{
+  display: inline-block;
+  vertical-align: middle;
+  width: 25px;
+  height:3px;
+  background-color: #000;
+  position: relative;
+}
+header .container .menu .menuShape::before{
+  content:"";
+  display: block;
+  position: absolute;
+  width:100%;
+  height:3px;
+  top:-8px;
+  background-color:#000;
+}
+header .container .menu .menuShape::after{
+  content:"";
+  display: block;
+  position: absolute;
+  width:100%;
+  height:3px;
+  top:8px;
+  background-color:#000;
+}
+header .container .menu .menuTitle{
+  font-size: 16px;
+}
+header .container h1{
+  position:absolute;
+  text-align: center;
+  left: 50%;
+  margin: 0 auto;
+  transform: translate(-50%);
+  padding: 10px;
+}
+header .container h1 a{
+  font-size:30px;
+  font-weight: 900;
+}
+header .container .enb{
+  display:flex;
+}
+header .container .enb ul{
+  display:flex;
+  gap:10px;
+  line-height: 60px;
+}
+header .container .enb ul li{
+  
+}
+header .container .enb ul li a{
+  
+}
+header .container .enb .searchButton{
+  margin-left: 30px;
+  padding:20px 30px;
+  position:relative;
+  text-indent: -9999px;
+  
+}
+header .container .enb .searchButton::before{
+  content:"";
+  display:block;
+  width:40px;
+  height:40px;
+  background-image:url(../img/search_black_24dp.svg);
+  background-size:cover;
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+  
+}

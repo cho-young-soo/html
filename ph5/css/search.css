@@ -1,0 +1,126 @@
+@charset "UTF-8";
+.search{
+  position:fixed;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  background-color:rgba(0,0,0,0.5);
+  z-index:2;
+  display:none;
+}
+.search .searchbox{
+  height:66%;
+  width:100%;
+  background-color:#fff;
+  position: relative;
+}
+.search .searchbox::before{
+  content:"";
+  display:block;
+  position:absolute;
+  top:70px;
+  background-color:#ddd;
+  width:  100%;
+  height: 1px;
+}
+.search .searchbox .container{
+  position: relative;
+}
+.search .searchbox .container .searchHeader{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:70px;
+  text-align: center;
+  line-height: 70px;
+}
+.search .searchbox .container .searchHeader h2{
+
+}
+.search .searchbox .container .searchHeader h2 a{
+ font-size: 30px;
+ font-weight: bold;
+}
+.search .searchbox .container .searchBody{
+  width: 100%;
+}
+.search .searchbox .container .searchBody .searchForm{
+
+}
+.search .searchbox .container .searchBody .searchForm form{
+
+}
+.search .searchbox .container .searchBody .searchForm form fieldset{
+  width:640px;
+  margin: 0 auto;
+  position: relative;
+}
+.search .searchbox .container .searchBody .searchForm form fieldset label{
+
+}
+.search .searchbox .container .searchBody .searchForm form fieldset input{
+  width: 100%;
+  height: 70px;
+  margin: 0 auto;
+  padding: 10px 72px 10px 0;
+  border: 0;
+  border-bottom:2px solid #1a1a1a;
+  font-size:24px;
+  box-sizing: border-box;
+}
+.search .searchbox .container .searchBody .searchForm form fieldset input:focus{
+  outline:none;
+}
+.search .searchbox .container .searchBody .searchForm form fieldset input::placeholder{
+  color:#dcdcdc;
+}
+.search .searchbox .container .searchBody .searchForm form fieldset button{
+  position:absolute;
+  width: 70px;
+  height: 70px;
+  top: 0;
+  right: 0;
+  background-image:url(../img/search_black_24dp.svg);
+  background-position: center;
+  background-size:50%;
+  background-repeat: no-repeat;
+}
+.search .searchbox .container .searchBody .recommend{
+  text-align: left;
+  width:640px;
+  margin:0 auto;
+  margin-top: 30px;
+}
+.search .searchbox .container .searchBody .recommend h3{
+  font-size:18px;
+  font-weight:700;
+  margin-bottom:16px;
+}
+.search .searchbox .container .searchBody .recommend ul{
+}
+.search .searchbox .container .searchBody .recommend ul li{
+  margin-bottom: 16px;
+}
+.search .searchbox .container .searchBody .recommend ul li a{
+  color: #666;
+}
+.search .searchbox .container .searchBody .recommend ul li a:hover{
+  color:#111;
+  text-decoration: underline;
+}
+.search .searchbox .container>div:last-child{
+  position:absolute;
+  top: 0;
+  right: 2%;
+  transform: translateY(50%);
+}
+.search .searchbox .container div .closeBtn{
+
+}
+.search .searchbox .container div .closeBtn::before,
+.search .searchbox .container div .closeBtn::after{
+  background-color:#000;
+  left:0;
+}

@@ -1,0 +1,282 @@
+@charset "UTF-8";
+main{
+}
+/* 타이틀 */
+.title{
+
+}
+.title .container{
+  flex-direction: column;
+  padding: 114px 6% 100px 6%;
+}
+.title .container div{
+}
+.title .container h2{
+  margin-bottom: 39px;
+  font-size: 72px;
+  text-align: center;
+}
+.title .container p{
+  text-align: center;
+  line-height: 50px;
+  margin-bottom: 70px;
+  font-size: 22px;
+  color: #666;
+}
+.title .container p strong{
+  
+  font-weight: 500;
+  color: #000;
+}
+.title .container figure{
+  width:100%;
+  transition-delay:0.5s;
+}
+.title .container figure img{
+  width:100%;
+}
+.title .container figure button{
+  text-indent: -9999px;
+  width:80px;
+  height:80px;
+  border-radius: 100%;
+  border:1px solid #fff;
+  background-color:transparent;
+  position:absolute;
+  left:calc(50% - 40px);
+  top:calc(50% - 40px);
+}
+.title .container figure button::after{
+  content:"재생";
+  display:block;
+  position:absolute;
+  width:40px;
+  height:40px;
+  background-image:url(../img/play_arrow.svg);
+  top:calc(50% - 20px);
+  left:calc(50% - 20px);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* 브랜드 */
+#brand{
+  height: 600px;
+}
+#brand .container{
+  height:100%;
+}
+#brand .container>div{
+  height:100%;
+}
+#brand .container .comment{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border-right: 1px solid #ddd;
+}
+#brand .container .comment>div{
+  position: relative;
+  height: 220px;
+}
+
+#brand .container .comment>div>div{
+  position:absolute;
+  width:100%;
+  top:100%;
+  opacity: 0;
+  transition:all 1s;
+}
+#brand .container .comment div .h3{
+  
+}
+#brand .container .comment div .p{
+  
+}
+#brand .container .comment div .more{
+  
+}
+#brand .container .img{
+  position: relative;
+  transition-delay: 0.5s;
+}
+#brand .container .img .imgList{
+  
+}
+#brand .container .img .imgList li{
+  
+}
+#brand .container .img .imgList li a{
+  
+}
+#brand .container .img .list{
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display:flex;
+  gap:20px;
+}
+#brand .container .img .list div{
+  width:10px;
+  height:10px;
+  background-color:#ddd;
+  border-radius: 100%;
+}
+/* inform */
+#inform{
+  width:100%;
+
+}
+#inform .container{
+  flex-direction: column;
+  padding: 4.7% 0 5.6%;
+  box-sizing: border-box;
+}
+#inform .container div{
+  text-align: center;
+}
+#inform .container .h3{
+
+}
+#inform .container .p{
+
+}
+#inform .container .more{
+
+}
+#inform .container .informList{
+  width:100%;
+  display:flex;
+  justify-content: center;
+  text-align: center;
+  gap: 40px;
+  margin-top: 70px;
+}
+#inform .container .informList li{
+  width: 404px;
+  overflow: hidden;
+}
+#inform .container .informList li:nth-of-type(1){
+  transition-delay: 0.5s;
+}
+#inform .container .informList li:nth-of-type(2){
+  transition-delay: 1s;
+}
+#inform .container .informList li:nth-of-type(3){
+  transition-delay: 1.5s;
+}
+#inform .container .informList li figure{
+  width: 100%;
+  height: 580px;
+  overflow: hidden;
+  margin-bottom: 35px;
+}
+#inform .container .informList li figure img{
+  transition:all 1s;
+}
+
+/* #inform .container .informList li img:hover{
+  scale:1.2;
+} */
+#inform .container .informList li h4{
+  font-size: 24px;
+  margin-bottom: 21px;
+  font-weight: 500;
+}
+#inform .container .informList li .more{
+  text-decoration: none;
+}
+
+/* 디자인 */
+#design{
+  height: 600px;
+}
+#design .container{
+  height:100%;
+  flex-direction: row-reverse;
+}
+#design .container>div{
+  height:100%;
+}
+#design .container .comment{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition-delay: 0.5s;
+}
+#design .container .comment .h3{
+  
+}
+#design .container .comment .p{
+  
+}
+#design .container .comment .more{
+  
+}
+#design .container .img{
+  border-right: 1px solid #ddd;
+  position: relative;
+
+}
+#design .container .img .imgList{
+  
+}
+#design .container .img .imgList li{
+  
+}
+#design .container .img .imgList li a{
+  
+}
+
+/* 갤러리 */
+#gallery{
+
+}
+#gallery .container{
+  flex-direction: column;
+  padding: 4.7% 6% 5.6%;
+}
+#gallery .container div{
+  text-align: center;
+}
+#gallery .container .h3{
+  
+}
+#gallery .container .p{
+  
+}
+#gallery .container figure{
+  position: relative;
+  overflow: hidden;
+  transition-delay: 0.5s;
+}
+#gallery .container figure a{
+
+}
+#gallery .container figure a img{
+  transition:all 1s;
+  width:  100%;
+}
+#gallery .container figure a:hover img{
+  scale:1.2;
+}
+#gallery .container figure div{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+#gallery .container figure div h4{
+  font-size: 40px;
+  margin-bottom: 13px;
+}
+#gallery .container figure div p{
+  
+  margin-top: 20px;
+  font-size: 20px;
+}
