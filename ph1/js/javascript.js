@@ -46,9 +46,7 @@ if($("html").width()>1024){
     }
     );
   }else{
-    console.log("작다");
-
-  }
+}
 
 // 타이틀 리스트 추가
 $("#title").append("<div class='titleList'></div>");
@@ -83,7 +81,7 @@ function slideMove() {
 }
 
 // 자동으로 돌아감
-var slideTitle = setInterval(slideMove, 4000);
+// var slideTitle = setInterval(slideMove, 4000);
 
 // 목차를 클릭했을 경우
 var clickedValue;
@@ -139,25 +137,44 @@ $("#title .titleList div").on("click", function () {
 });
 
 // 호버시 자세히 보러가기  생성
-function listMoreAdd() {
-  $(this).append("<div class='listMore'>자세히 보러가기 ><div>");
-  $(".listMore").css({"width":$(this).width()});
-};
+  function listMoreAdd() {
+    $(this).append("<div class='listMore'>자세히 보러가기 ><div>");
+    $(".listMore").css({"width":$(this).width()});
+  };
 
-function listMoreRemove() {
-  $(".listMore").remove();
-};
-$("section .w1200 ul li a").hover(listMoreAdd, listMoreRemove);
+  function listMoreRemove() {
+    $(".listMore").remove();
+  };
+  if($(window).outerWidth()>1023){
+    $("section:not(#showroom) .w1200 ul li a").hover(listMoreAdd, listMoreRemove);
+    $(window).on("resize",function(){
+      if($(window).outerWidth()<=1023){
+        $("section:not(#showroom) .w1200 ul li a").off("mouseenter");
+      }else{
+        $("section:not(#showroom) .w1200 ul li a").hover(listMoreAdd, listMoreRemove);
+      }
+    });
+  }else{
+    $(window).on("resize",function(){
+      if($(window).outerWidth()>1023){
+        $("section:not(#showroom) .w1200 ul li a").hover(listMoreAdd, listMoreRemove);
+      }else{
+        $("section:not(#showroom) .w1200 ul li a").off("mouseenter");
+      }
+    }
+  );
+  }
+  // 2번
 
-// 쇼룸 리스트 클릭시 해당 이미지 보이기
-$("#showroom .w1200 ul li:nth-child(1)").addClass("select");
-$("#showroom .w1200 ul li:not(:last-child)").click(function () {
-  $(this).addClass("select");
-  $(this).siblings().removeClass("select")
-  var image_index = $(this).index() + 1
-  $("#showroom img").attr("src", "img/showroom/04_shoroom_" + image_index + ".jpg")
-});
 
+  // 쇼룸 리스트 클릭시 해당 이미지 보이기
+  $("#showroom .w1200 ul li:nth-child(1)").addClass("select");
+  $("#showroom .w1200 ul li:not(:last-child)").click(function () {
+    $(this).addClass("select");
+    $(this).siblings().removeClass("select")
+    var image_index = $(this).index() + 1
+    $("#showroom img").attr("src", "img/showroom/04_shoroom_" + image_index + ".jpg")
+  });
 
 // 스크롤 투  탑
 $(".toTop span").on("click", function () {

@@ -60,6 +60,7 @@ section {
   color:#fff;
   text-align:center;
   line-height: 330px;
+  font-size:1.6rem;
 }
 .listMore::after{
   content:">";
@@ -84,14 +85,15 @@ section {
 
 #issue .w1200 ul {
   display: flex;
-  justify-content: space-between;
   margin-bottom: 115px;
+  gap: 5rem;
+  flex-wrap: wrap;
 }
 
 #issue .w1200 ul li {
   text-align: left;
   position:relative;
-  width:30%;
+  flex: 1 1 3rem;  
 }
   
 
@@ -137,7 +139,7 @@ section {
 }
 
 #issue .w1200 figure figcaption p {
-
+  font-size:1.6rem;
   margin-bottom: 40px;
 }
 
@@ -151,6 +153,7 @@ section {
   line-height: 44px;
   border-radius: 5px;
   position: relative;
+  font-size:1.6rem;
 }
 
 #issue .w1200 figure figcaption a:hover {
@@ -226,6 +229,7 @@ section {
   width: 100%;
   background-color: #efefef;
   margin: 0 auto;
+  font-size:1.6rem;
 }
 
 #news .w1200 table tbody {}
@@ -283,11 +287,12 @@ section {
   width:100%;
   display: flex;
   justify-content: space-between;
+  gap: 5rem;
 }
 
 #casestudy .w1200 ul li {
   position:relative;
-  width:30%;
+  flex: 1 1 3rem;
 }
 
 #casestudy .w1200 ul li a {}
@@ -336,11 +341,12 @@ section {
 }
 #blogbanner a div div{
   position:absolute;
-  top:calc(50% - 32px);
-  left: calc(50% - 141px);
+  top:calc(50% - 40px);
   color: #fff;
   text-align: center;
   line-height: 2;
+  width: 100%;
+  font-size: 2rem;
 }
 #blogbanner a div div h2{
   
@@ -393,6 +399,7 @@ section {
   transform-origin: right bottom;
   transform: rotate(-90deg);
   position:relative;
+  font-size:1.3rem;
 }
 .sideBar h2 span{
   display:inline-block;

@@ -36,6 +36,7 @@ header .w1200 .gnb li h2{
   position:relative;
   padding-bottom: 20px;
   top: 10px;
+  font-size: 1.6rem;
 }
 header .w1200 .gnb li:hover h2{
   color:red;
@@ -78,7 +79,7 @@ header .w1200 .gnb li .hide div{
   
 }
 header .w1200 .gnb li .hide div h3{
-  
+  font-size: 1.6rem;
 }
 header .w1200 .gnb li div ul{
   line-height: 1.6;
@@ -102,7 +103,7 @@ header .w1200 .gnb li div ul li{
  
 }
 header .w1200 .gnb li div ul li a{
-  
+ font-size:1.3rem;
 }
 header .w1200 .gnb li div ul li a::before{
   content:"-";
@@ -289,6 +290,7 @@ header .w1200 .enb .finder{
   background-color: red;
   padding: 3px;
   padding-left: 113px;
+  font-size:1.3rem;
 }
 header .w1200 .enb .finder::before{
   content:"";
@@ -307,7 +309,7 @@ header .w1200 .enb span{
   height: 100%;
 }
 header .w1200 .enb span a{
-  
+  font-size:1.3rem;
 }
 header .w1200 .enb span a:nth-child(1)::after{
   content:"";

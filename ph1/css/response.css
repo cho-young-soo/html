@@ -76,11 +76,6 @@
   footer .company .company_inform{
     padding:0 16px;
   }
-  footer .company .company_inform{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-  }
   footer .list{
     padding:0 30px;
     box-sizing: border-box;
@@ -102,12 +97,42 @@
   }
   
 }
+@media screen and (max-width:985px){
+  footer .company .company_inform > div:nth-child(1){
+    flex: 1 1 32rem;
+    order:0;
+    font-size:1.3rem;
+  }
+  footer .company .company_inform > div:nth-child(1) p{
+    font-size:1.3rem
+  }
+  footer .company .company_inform > div:nth-child(2){
+    order:2;
+    justify-content: space-evenly;
+    text-align: center;
+    flex-direction: column;
+  }
+  footer .company .company_inform > ul{
+    flex: 1 1 32rem;
+    order:1;
+  }
+}
+@media screen and (max-width:920px){
+  footer .list{
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+}
 @media screen and (max-width:876px){
   #showroom .w1200 ul li{
       padding: 6px 20px;
   }
 }
 @media screen and (max-width:767px){
+  .more{
+    right:5rem;
+  }
   body{
     padding:0px;
     box-sizing: border-box;
@@ -161,27 +186,7 @@
   #title ul li .titlePosition{
     text-align: center;
   }
-  #title ul li:nth-child(1) .titlePosition{
-    top:calc(50% - 102.2px);
-    left: calc(50% - 138.6px);
-  }
-  #title ul li:nth-child(2) .titlePosition{
-    top:calc(50% - 102.2px);
-    left: calc(50% - 196.8px);
-  }
-  #title ul li:nth-child(3) .titlePosition{
-    top:calc(50% - 136.8px);
-    left: calc(50% - 321.7px);
-  }
-  #title ul li:nth-child(4) .titlePosition{
-    top:calc(50% - 78.6px);
-    left: calc(50% - 207.4px);
-  }
-  #title ul li:nth-child(5) .titlePosition{
-    top:calc(50% - 102.2px);
-    left: calc(50% - 138.6px);
-    right: unset;
-  }   
+
   #title .button-container{
     top:unset;
     bottom:30px;
@@ -200,7 +205,7 @@
     gap:50px;
   }  
   #issue .w1200 ul li{
-    width:65%;
+ 
   }
   #issue .w1200 ul li a{
     text-align: center;
@@ -222,7 +227,7 @@
     text-align: center;
   }
   #casestudy .w1200 ul li{
-    width:65%;
+
   }
 /*  totop  */
   .toTop{
@@ -234,33 +239,41 @@
   }
   
 /* footer   */
-  footer{
-    display:flex;
-    flex-direction:column;
-    width: 100%;
+ footer .company .company_inform *{
+    font-size:1.1rem !important;
   }
-  footer .company .company_inform{
-    display:flex;
-    flex-direction: column;
-    text-align: center;
-    width: unset;
+}
+@media screen and (max-width:718px){
+  #news .w1200 table tbody tr td{
+    font-size:1.5rem
   }
-  footer .company .company_inform > div{
-    width: unset;
+}
+@media screen and (max-width:710px){
+  #showroom .w1200 ul li{
+    font-size:1.3rem;
+    padding: 6px 10px;
   }
-  footer .company .company_inform dl{
-    flex-direction: column;
-    width:unset;
+}
+@media screen and (max-width:674px){
+  #news .w1200 table tbody tr td{
+    font-size:1.2rem;
   }
-  footer .company .company_inform dl .inform-left{
-    margin-right: 0;
+  footer .company .company_inform > div:nth-child(1){
+    flex:1 1 20rem;
   }
-  footer .list{
-    width:unset;
-    flex-direction: column;
-    gap:50px;
+  footer .company .company_inform > ul{
+    flex:1 1 20rem;
   }
-  footer .list .list_right{
-    justify-content: center;
+}
+@media screen and (max-width:576px){
+  #title .titleList{
+    bottom:30px;
+  }
+  #title ul{
+    
+    height:387px;
+  }
+  #title ul li{
+    background-size: contain;
   }
 }

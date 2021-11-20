@@ -11,27 +11,27 @@ footer .company .company_inform{
   width: 100%;
   box-sizing: border-box;
   margin: 0 auto;
-  font-size: 13px;
+  font-size: 1.3rem;
   line-height: 250%;
   overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
 }
-footer .company .company_inform>div{
-  float: left;
-  width: 19%;
-  order:1;
-  
+footer .company .company_inform>div:nth-child(1){
+  flex: 1 1 10rem;
 }
 footer .company .company_inform>div h2{
   
 }
 footer .company .company_inform>div p{
-  
+  font-size: 1rem;
 }
 footer .company .company_inform > div:nth-of-type(2){
   display: flex;
-  float: left;
-  width: 70%;
-  order:0;
+  flex: 1 1 64rem;
+}
+footer .company .company_inform > div:nth-of-type(2) >div {
+  width:100%;
 }
 footer .company .company_inform > div:nth-of-type(2) .inform-left{
    margin-right: 35px;
@@ -39,10 +39,7 @@ footer .company .company_inform > div:nth-of-type(2) .inform-left{
 footer .company .company_inform > div:nth-of-type(2) .inform-left dl{
   
 }
-/* footer .company .company_inform dl .inform-left{
-  
-  margin-right: 35px;
-} */
+
 footer .company .company_inform > div:nth-of-type(2) .inform-right{
   
 }
@@ -65,8 +62,8 @@ footer .company .company_inform div:nth-child(2) div dl dd+dd{
   display: block;
 }
 footer .company .company_inform ul{ 
-  float: right;
-  order: 2;
+
+  flex: 1 1 10rem;
 }
 footer .company .company_inform ul li{ 
   
