@@ -75,7 +75,7 @@
 #join .center form .agree+span{
   line-height: 1.3;
 }
-#join .center form .agree+span p:nth-child(1){
+#join .center form .agree+span span:nth-child(1){
   color:#06c;
 }
 
@@ -220,7 +220,7 @@
 #join .center form .information .wordtest button{
   
 }
-#join .center form .information+span p{
+#join .center form .information+span span{
   text-align: left;
   margin-bottom:10px;
   position: relative;
@@ -228,7 +228,7 @@
   line-height: 1.3;
   color: #666;
 }
-#join .center form .information+span p::before{
+#join .center form .information+span span::before{
   content:"";
   display:inline-block;
   width:4px;
@@ -238,6 +238,6 @@
   top: 9px;
   left: 0px;
 }
-#join .center form .information+span p strong{
+#join .center form .information+span span strong{
   color: #333;
 }

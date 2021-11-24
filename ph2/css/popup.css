@@ -51,7 +51,7 @@ html,body{
   color: #999;
 }
 
-#popup .left time{
+#popup .left .time{
     
   padding-top: 20px;
   display: inline-block;

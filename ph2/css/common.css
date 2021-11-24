@@ -1,5 +1,7 @@
 @charset "UTF-8";
-
+*:not(i) {
+  font-family: 'Noto Sans KR', sans-serif !important;
+}
 /* 공통클래스 스타일 */
 .hide {
   display: none;

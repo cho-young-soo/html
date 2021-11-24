@@ -18,73 +18,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-  
+
   <title>건축행정시스템 세움터</title>
-  <!-- 폰트 설정 -->
-  <style>
-    *:not(i) {
-      font-family: 'Noto Sans KR', sans-serif !important;
-    }
-  </style>
-
-  <!-- 닫기버튼 -->
-  <script type="text/javascript" src="js/jquery-3.6.0.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function(){
-        $("#popup a.close").click(
-          function(){
-            $("#popup").hide();
-            return false;
-          }
-        );
-
-        $("#collusion .center .slide > div:first-child").addClass("show");
-        $("#collusion .center .list li:first-child").addClass("show");
-        $("#collusion .center .control button:last-child").on("click",function(){
-          var current;
-          $("#collusion .center .slide > div").each(function(){
-            if($(this).hasClass("show")){
-              current=$(this).index()
-            }
-          });
-          $("#collusion .center .slide > div").removeClass("show");
-          $("#collusion .center .list li").removeClass("show");
-          if(current==$("#collusion .center .slide > div").length-1){
-            current=0;
-            $("#collusion .center .slide").css({"left":-100*current+"%"});
-            $("#collusion .center .slide > div").eq(current).addClass("show")
-            $("#collusion .center .list li").eq(current).addClass("show");
-          }else{
-            current++
-            $("#collusion .center .slide").css({"left":-100*current+"%"});
-            $("#collusion .center .slide > div").eq(current).addClass("show");
-            $("#collusion .center .list li").eq(current).addClass("show");
-          }
-        });
-        $("#collusion .center .control button:first-child").on("click",function(){
-          var current;
-          $("#collusion .center .slide > div").each(function(){
-            if($(this).hasClass("show")){
-              current=$(this).index()
-            }
-          });
-          $("#collusion .center .slide > div").removeClass("show");
-          $("#collusion .center .list li").removeClass("show");
-          if(current==0){
-            current=2;
-            $("#collusion .center .slide").css({"left":-100*current+"%"});
-            $("#collusion .center .slide > div").eq(current).addClass("show")
-            $("#collusion .center .list li").eq(current).addClass("show");
-          }else{
-            current--
-            $("#collusion .center .slide").css({"left":-100*current+"%"});
-            $("#collusion .center .slide > div").eq(current).addClass("show");
-            $("#collusion .center .list li").eq(current).addClass("show");
-          }
-        });
-      }
-    );
-  </script>
 </head>
 
 <body>
@@ -531,13 +466,15 @@
       <h1><a href="">국토교통부</a></h1>
       <address>
         세종특별자치시 도움6로 11국토교통부(30103)
-        <span>세움터 콜센터 <strong>02-3480-0200</strong> 에너지 절약 계획서 콜센터 <strong>1588-9849</strong><br><span>09:00 ~ 18:00 토,공휴일 제외</span></span>
+        <span>세움터 콜센터 <strong>02-3480-0200</strong> 에너지 절약 계획서 콜센터 <strong>1588-9849</strong><br><span>09:00 ~ 18:00
+            토,공휴일 제외</span></span>
       </address>
       <p class="copyright">Copyright <strong>MOLIT</strong> All rights reserved.
       </p>
     </div>
   </footer>
-
+  <script src="js/jquery-3.6.0.js"></script>
+  <script src="js/javascript.js"></script>
 </body>
 
 </html>

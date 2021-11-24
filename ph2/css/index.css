@@ -713,7 +713,7 @@ section {
   transition: all 1s;
 }
 #collusion .center .list li.show {
-  opacity:1; 
+  opacity:1;
 }
 
 #collusion .center .list li a {
