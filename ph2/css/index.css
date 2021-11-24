@@ -833,7 +833,7 @@ section {
   display: block;
   width: 379px;
   height: 307px;
-  background: -moz-linear-gradient(-45deg, #f99da8 45%, #e75b66 73%);
+  background: linear-gradient(-45deg, #f99da8 45%, #e75b66 73%);
   text-align: right;
   color: #fff;
   box-sizing: border-box;
