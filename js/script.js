@@ -192,7 +192,7 @@ var liLength = $(".typing-txt>ul>li").length;
 
 // 타이핑될 텍스트를 가져온다 
 var typingTxt = $(".typing-txt>ul>li").eq(liIndex).text();
-typingTxt = typingTxt.split(""); // 한글자씩 자른다. 
+// typingTxt = typingTxt.split(""); // 한글자씩 자른다. 
 var tyInt = setInterval(typing, 100); // 반복동작 
 
 function typing() {
