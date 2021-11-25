@@ -192,7 +192,7 @@ var liLength = $(".typing-txt>ul>li").length;
 
 // 타이핑될 텍스트를 가져온다 
 var typingTxt = $(".typing-txt>ul>li").eq(liIndex).text();
-// typingTxt = typingTxt.split(""); // 한글자씩 자른다. 
+typingTxt = typingTxt.split(""); // 한글자씩 자른다. 
 var tyInt = setInterval(typing, 100); // 반복동작 
 
 function typing() {
@@ -226,57 +226,6 @@ function typing() {
 }
 
 
-// progress bar width값, count 값
-// $(window).on("scroll",function(){
-//   var i;
-//   var skillLength = $("#skill .skillContent .webSkill .progress").length;
-
-//   if(page == 2){
-//     for (i = 1; i <= skillLength; i++) {
-//       var skillPercent = $(".skill .skillContent .webSkill .progress:nth-child(" + i + ") h3 span").text() * 1
-//       $(".skill .skillContent .webSkill .progress:nth-child(" + i + ") .bar span").css("width",
-//         skillPercent + "%");
-//     }
-//   }else{
-
-//   }
-//   if($(window).scrollTop() == $("#skill").offset().top){
-//     var countValue1 = 0;
-//     var countValue2 = 0;
-//     var countValue3 = 0;
-
-//     function counter1() {
-//       countValue1++
-//       if (countValue1 > $(".skill .skillContent .box-container .box:nth-child(1) span").text() * 1) {
-//         clearInterval(countFn1);
-//       } else {
-//         $(".skill .skillContent .box-container .box:nth-child(1) p").text(countValue1);
-//       }
-//     }
-//     function counter2() {
-//       countValue2++
-//       if (countValue2 > $(".skill .skillContent .box-container .box:nth-child(2) span").text() * 1) {
-//         clearInterval(countFn2);
-//       } else {
-//         $(".skill .skillContent .box-container .box:nth-child(2) p").text(countValue2);
-//       }
-//     }
-//     function counter3() {
-//       countValue3++
-//       if (countValue3 > $(".skill .skillContent .box-container .box:nth-child(3) span").text() * 1) {
-//         clearInterval(countFn3);
-//       } else {
-//         $(".skill .skillContent .box-container .box:nth-child(3) p").text(countValue3);
-//       }
-//     }
-
-//     var countFn1 = setInterval(counter1, 30);
-//     var countFn2 = setInterval(counter2, 30);
-//     var countFn3 = setInterval(counter3, 30);
-//   }
-// });
-
-
 // skill 클릭시 옆의 부가 설명 창
 $(".skill .skillContent .webSkill .progress").on("click", function () {
   var fairinform = $(this).index() + 1;
@@ -286,10 +235,12 @@ $(".skill .skillContent .webSkill .progress").on("click", function () {
   $(".skill .skillContent .skillinform div:not(:nth-child(" + fairinform + "))").removeClass("skillShow");
 });
 
+// 메시지 보낼때 주의사항
 $(".contact .row form .btn").on("click", function () {
   alert("전송완료시 작성내용이 사라집니다(1~2초 정도 소요). 감사합니다.")
 });
 
+// 너비에 따라 클릭인지 호버인지 구분
 if($(window).outerWidth()>991){
   $(".portfolio .box-container .box").hover(
     function(){
@@ -301,7 +252,6 @@ if($(window).outerWidth()>991){
   );
 }else{
   $(".portfolio .box-container .box").on("click",function(){
-    console.log("클릭");
     $(this).addClass("click");
     $(this).siblings().removeClass("click");
   })
@@ -318,7 +268,6 @@ $(window).resize(function(){
     );
   }else{
     $(".portfolio .box-container .box").on("click",function(){
-      console.log("클릭");
       $(this).addClass("click");
       $(this).siblings().removeClass("click");
     })
